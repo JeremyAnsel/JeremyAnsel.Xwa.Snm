@@ -117,10 +117,10 @@ namespace JeremyAnsel.Xwa.Snm
                             {
                                 case "Wave":
                                     {
-                                        if (snm.AudioHeader != null)
-                                        {
-                                            throw new InvalidDataException();
-                                        }
+                                        //if (snm.AudioHeader != null)
+                                        //{
+                                        //    throw new InvalidDataException();
+                                        //}
 
                                         int size = file.ReadBigEndianInt32();
                                         flhdPosition += size + 4;
@@ -142,8 +142,8 @@ namespace JeremyAnsel.Xwa.Snm
                                         break;
                                     }
 
-                                default:
-                                    throw new InvalidDataException();
+                                //default:
+                                //    throw new InvalidDataException();
                             }
                         }
                     }
