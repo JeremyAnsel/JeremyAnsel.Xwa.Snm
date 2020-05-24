@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A .Net library to handle X-Wing Alliance's SNM files.</description>
     <copyright>Copyright © 2017 Jérémy Ansel</copyright>
-    <tags>Xwa Snm Avi Movie</tags>
+    <tags>Xwa Snm Avi Mp4 Movie Video Audio Converter Encoder Decoder</tags>
   </metadata>
   <files>
     <file src="bin\$configuration$\$id$.pdb" target="lib\net45\" />

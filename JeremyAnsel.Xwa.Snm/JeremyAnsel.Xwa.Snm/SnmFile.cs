@@ -416,7 +416,7 @@ namespace JeremyAnsel.Xwa.Snm
         }
 
         [SuppressMessage("Microsoft.Reliability", "CA2000:Supprimer les objets avant la mise hors de portée")]
-        public void SaveAsAvi(string fileName)
+        public void SaveAsAviMotionJpeg(string fileName)
         {
             var writer = new AviWriter(fileName)
             {
@@ -426,7 +426,7 @@ namespace JeremyAnsel.Xwa.Snm
 
             try
             {
-                IAviVideoStream videoStream = writer.AddMotionJpegVideoStream(this.Header.Width, this.Header.Height, 70);
+                IAviVideoStream videoStream = writer.AddMotionJpegVideoStream(this.Header.Width, this.Header.Height, 100);
                 IAviAudioStream audioStream = writer.AddAudioStream(this.AudioHeader.NumChannels, this.AudioHeader.Frequency, 16);
 
                 this.BeginPlay();
@@ -458,6 +458,67 @@ namespace JeremyAnsel.Xwa.Snm
             finally
             {
                 writer.Close();
+            }
+        }
+
+        [SuppressMessage("Microsoft.Reliability", "CA2000:Supprimer les objets avant la mise hors de portée")]
+        public void SaveAsAviMpeg4(string fileName)
+        {
+            var writer = new AviWriter(fileName)
+            {
+                FramesPerSecond = (1000000 + this.Header.FrameDelay / 2) / this.Header.FrameDelay,
+                EmitIndex1 = true
+            };
+
+            try
+            {
+                IAviVideoStream videoStream = writer.AddMpeg4VideoStream(this.Header.Width, this.Header.Height, (int)writer.FramesPerSecond, 0, 100);
+                IAviAudioStream audioStream = writer.AddAudioStream(this.AudioHeader.NumChannels, this.AudioHeader.Frequency, 16);
+
+                this.BeginPlay();
+
+                try
+                {
+                    byte[] audio;
+                    byte[] video;
+
+                    while (this.RetrieveNextFrame(out audio, out video))
+                    {
+                        if (video != null)
+                        {
+                            byte[] buffer = SnmFile.Convert16BppTo32Bpp(video);
+                            videoStream.WriteFrame(true, buffer, 0, buffer.Length);
+                        }
+
+                        if (audio != null)
+                        {
+                            audioStream.WriteBlock(audio, 0, audio.Length);
+                        }
+                    }
+                }
+                finally
+                {
+                    this.EndPlay();
+                }
+            }
+            finally
+            {
+                writer.Close();
+            }
+        }
+
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Mp")]
+        public void SaveAsMp4(string fileName)
+        {
+            SnmMp4Helpers.Startup();
+
+            try
+            {
+                SnmMp4Helpers.ConvertWrite(this, fileName);
+            }
+            finally
+            {
+                SnmMp4Helpers.Shutdown();
             }
         }
 
@@ -627,6 +688,25 @@ namespace JeremyAnsel.Xwa.Snm
                 });
 
             return snm;
+        }
+
+        public static SnmFile FromMFFile(string fileName)
+        {
+            if (!File.Exists(fileName))
+            {
+                throw new FileNotFoundException();
+            }
+
+            SnmMp4Helpers.Startup();
+
+            try
+            {
+                return SnmMp4Helpers.ConvertRead(fileName);
+            }
+            finally
+            {
+                SnmMp4Helpers.Shutdown();
+            }
         }
 
         private static byte[] ConvertAudio44100To22050(byte[] audioData)

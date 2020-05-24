@@ -37,7 +37,7 @@ namespace AviFile
         }
 
         /// <summary>Pointer to the unmanaged AVI Stream</summary>
-        internal virtual IntPtr StreamPointer
+        internal IntPtr StreamPointer
         {
             get { return aviStream; }
         }

@@ -61,8 +61,8 @@ namespace AviFile
         /// <returns>The wave data</returns>
         public byte[] GetStreamData()
         {
-            int streamLength = NativeMethods.AVIStreamLength(aviStream);
-            int dataLength = streamLength * this.ChannelsCount * this.BitsPerSample / 8;
+            int dataLength = NativeMethods.AVIStreamLength(aviStream);
+            int streamLength = dataLength / (this.ChannelsCount * this.BitsPerSample / 8);
             byte[] waveData = new byte[dataLength];
 
             GCHandle waveDataHandle = GCHandle.Alloc(waveData, GCHandleType.Pinned);

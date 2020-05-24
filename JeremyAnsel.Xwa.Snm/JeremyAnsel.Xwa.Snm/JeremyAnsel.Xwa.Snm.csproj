@@ -38,6 +38,14 @@
       <HintPath>..\packages\JeremyAnsel.Xwa.Imc.1.0.3\lib\net40\JeremyAnsel.Xwa.Imc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MediaFoundation, Version=3.1.0.0, Culture=neutral, PublicKeyToken=36fa660e1d6ebf8d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediaFoundation.3.1.0\lib\MediaFoundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MediaFoundation.Extension, Version=1.0.0.35224, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediaFoundation.3.1.0\lib\MediaFoundation.Extension.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SharpAvi, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpAvi.2.1.0\lib\net45\SharpAvi.dll</HintPath>
       <Private>True</Private>
@@ -70,6 +78,7 @@
     <Compile Include="SnmFile.cs" />
     <Compile Include="SnmFrame.cs" />
     <Compile Include="SnmHeader.cs" />
+    <Compile Include="SnmMp4Helpers.cs" />
     <Compile Include="SnmVideoFrame.cs" />
     <Compile Include="SnmVideoHeader.cs" />
   </ItemGroup>
