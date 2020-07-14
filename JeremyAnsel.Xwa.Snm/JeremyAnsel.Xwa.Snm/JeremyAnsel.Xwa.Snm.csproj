@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <Version>1.0.0</Version>
+    <Description>A .Net library to handle X-Wing Alliance's SNM files.</Description>
+    <Authors>Jérémy Ansel</Authors>
+    <Company>Jérémy Ansel</Company>
+    <Copyright>Copyright © 2017, 2020 Jérémy Ansel</Copyright>
+    <PackageTags>Xwa Snm Avi Mp4 Movie Video Audio Converter Encoder Decoder</PackageTags>
+    <PackageProjectUrl>https://github.com/JeremyAnsel/JeremyAnsel.Xwa.Snm</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JeremyAnsel.Xwa.Imc" Version="2.0.5" />
+    <PackageReference Include="MediaFoundation" Version="3.1.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="SharpAvi" Version="2.1.2" />
+  </ItemGroup>
+
+</Project>

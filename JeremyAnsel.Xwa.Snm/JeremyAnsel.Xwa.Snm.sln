@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeremyAnsel.Xwa.Snm", "JeremyAnsel.Xwa.Snm\JeremyAnsel.Xwa.Snm.csproj", "{51479E97-60B5-4EA3-ADAB-A2C988DB82F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation", "Documentation\Documentation.csproj", "{3F8EDAD8-9CDC-4391-A9B5-2A3FEA7DB2DF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{51479E97-60B5-4EA3-ADAB-A2C988DB82F8} = {51479E97-60B5-4EA3-ADAB-A2C988DB82F8}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51479E97-60B5-4EA3-ADAB-A2C988DB82F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51479E97-60B5-4EA3-ADAB-A2C988DB82F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51479E97-60B5-4EA3-ADAB-A2C988DB82F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51479E97-60B5-4EA3-ADAB-A2C988DB82F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F8EDAD8-9CDC-4391-A9B5-2A3FEA7DB2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F8EDAD8-9CDC-4391-A9B5-2A3FEA7DB2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F8EDAD8-9CDC-4391-A9B5-2A3FEA7DB2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8EDAD8-9CDC-4391-A9B5-2A3FEA7DB2DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CF606B3-AD3E-4D85-B618-8867FF44F145}
+	EndGlobalSection
+EndGlobal
