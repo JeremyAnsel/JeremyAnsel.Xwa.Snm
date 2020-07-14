@@ -507,21 +507,22 @@ namespace JeremyAnsel.Xwa.Snm
             }
         }
 
+        [SuppressMessage("Globalization", "CA1303:Ne pas passer de littéraux en paramètres localisés", Justification = "Reviewed.")]
         public static byte[] Decompress(byte[] input, SnmVideoFrame video, Blocky16Context context)
         {
             if (input == null)
             {
-                throw new ArgumentNullException("input");
+                throw new ArgumentNullException(nameof(input));
             }
 
             if (video == null)
             {
-                throw new ArgumentNullException("video");
+                throw new ArgumentNullException(nameof(video));
             }
 
             if (context == null)
             {
-                throw new ArgumentNullException("context");
+                throw new ArgumentNullException(nameof(context));
             }
 
             if (video.Sequence == 0)
@@ -663,7 +664,7 @@ namespace JeremyAnsel.Xwa.Snm
         {
             if (input == null)
             {
-                throw new ArgumentNullException("input");
+                throw new ArgumentNullException(nameof(input));
             }
 
             //subcodecId = 0;

@@ -47,9 +47,10 @@ namespace JeremyAnsel.Xwa.Snm
 
         public static SnmFile FromFile(string fileName)
         {
-            var snm = new SnmFile();
-
-            snm.FileName = fileName;
+            var snm = new SnmFile
+            {
+                FileName = fileName
+            };
 
             Stream filestream = null;
 
@@ -433,10 +434,7 @@ namespace JeremyAnsel.Xwa.Snm
 
                 try
                 {
-                    byte[] audio;
-                    byte[] video;
-
-                    while (this.RetrieveNextFrame(out audio, out video))
+                    while (this.RetrieveNextFrame(out byte[] audio, out byte[] video))
                     {
                         if (video != null)
                         {
@@ -479,10 +477,7 @@ namespace JeremyAnsel.Xwa.Snm
 
                 try
                 {
-                    byte[] audio;
-                    byte[] video;
-
-                    while (this.RetrieveNextFrame(out audio, out video))
+                    while (this.RetrieveNextFrame(out byte[] audio, out byte[] video))
                     {
                         if (video != null)
                         {
@@ -549,9 +544,11 @@ namespace JeremyAnsel.Xwa.Snm
                         throw new NotSupportedException();
                     }
 
-                    snm.AudioHeader = new SnmAudioHeader();
-                    snm.AudioHeader.Frequency = audioStream.SamplesPerSecond;
-                    snm.AudioHeader.NumChannels = audioStream.ChannelsCount;
+                    snm.AudioHeader = new SnmAudioHeader
+                    {
+                        Frequency = audioStream.SamplesPerSecond,
+                        NumChannels = audioStream.ChannelsCount
+                    };
 
                     audioData = audioStream.GetStreamData();
 
@@ -608,8 +605,10 @@ namespace JeremyAnsel.Xwa.Snm
 
                             if (audioPosition < audioData.Length && audioLength != 0)
                             {
-                                frame.Audio = new SnmAudioFrame();
-                                frame.Audio.NumSamples = audioLength / 4;
+                                frame.Audio = new SnmAudioFrame
+                                {
+                                    NumSamples = audioLength / 4
+                                };
 
                                 byte[] buffer = new byte[audioLength];
                                 Array.Copy(audioData, audioPosition, buffer, 0, audioLength);
@@ -622,10 +621,15 @@ namespace JeremyAnsel.Xwa.Snm
 
                         if (videoData != null)
                         {
-                            frame.Video = new SnmVideoFrame();
-                            frame.Video.Width = snm.Header.Width;
-                            frame.Video.Height = snm.Header.Height;
-                            frame.Video.RleOutputSize = snm.Header.Width * snm.Header.Height * 2;
+                            frame.Video = new SnmVideoFrame
+                            {
+                                Width = snm.Header.Width,
+                                Height = snm.Header.Height,
+                                RleOutputSize = snm.Header.Width * snm.Header.Height * 2,
+
+                                SubcodecId = (byte)videoStream.BitsPerPixel,
+                                Data = videoData
+                            };
 
                             //byte[] buffer;
 
@@ -641,9 +645,6 @@ namespace JeremyAnsel.Xwa.Snm
                             //byte subcodecId;
                             //frame.Video.Data = Blocky16.Compress(buffer, out subcodecId);
                             //frame.Video.SubcodecId = subcodecId;
-
-                            frame.Video.SubcodecId = (byte)videoStream.BitsPerPixel;
-                            frame.Video.Data = videoData;
                         }
 
                         snm.Frames.Add(frame);
@@ -681,8 +682,7 @@ namespace JeremyAnsel.Xwa.Snm
                             buffer = SnmFile.Convert32BppTo16Bpp(frame.Video.Data);
                         }
 
-                        byte subcodecId;
-                        frame.Video.Data = Blocky16.Compress(buffer, out subcodecId);
+                        frame.Video.Data = Blocky16.Compress(buffer, out byte subcodecId);
                         frame.Video.SubcodecId = subcodecId;
                     }
                 });

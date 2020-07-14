@@ -53,11 +53,9 @@ namespace AviFile
                 videoStream = null;
             }
 
-            IntPtr aviStream;
-
             int result = NativeMethods.AVIFileGetStream(
                 aviFile,
-                out aviStream,
+                out IntPtr aviStream,
                 Avi.streamtypeVIDEO, 0);
 
             if (result == Avi.AVIERR_NODATA)
@@ -85,11 +83,9 @@ namespace AviFile
                 audioStream = null;
             }
 
-            IntPtr aviStream;
-
             int result = NativeMethods.AVIFileGetStream(
                 aviFile,
-                out aviStream,
+                out IntPtr aviStream,
                 Avi.streamtypeAUDIO, 0);
 
             if (result == Avi.AVIERR_NODATA)

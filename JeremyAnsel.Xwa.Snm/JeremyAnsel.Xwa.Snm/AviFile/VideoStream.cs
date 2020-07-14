@@ -29,53 +29,24 @@ namespace AviFile
         [SuppressMessage("Microsoft.Reliability", "CA2006:UseSafeHandleToEncapsulateNativeResources")]
         private IntPtr getFrameObject;
 
-        /// <summary>size of an imge in bytes, stride*height</summary>
-        private int frameSize;
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public int FrameSize
-        {
-            get { return frameSize; }
-        }
-
-        private double frameRate;
-        public double FrameRate
-        {
-            get { return frameRate; }
-        }
-
-        private int width;
-        public int Width
-        {
-            get { return width; }
-        }
-
-        private int height;
-        public int Height
-        {
-            get { return height; }
-        }
-
-        private short bitsPerPixel;
-        public short BitsPerPixel
-        {
-            get { return bitsPerPixel; }
-        }
+        public int FrameSize { get; }
+        
+        public double FrameRate { get; }
+        
+        public int Width { get; }
+        
+        public int Height { get; }
+        
+        public short BitsPerPixel { get; }
 
         /// <summary>count of frames in the stream</summary>
-        private int framesCount = 0;
-        public int FramesCount
-        {
-            get { return framesCount; }
-        }
+        public int FramesCount { get; } = 0;
 
         /// <summary>initial frame index</summary>
         /// <remarks>Added by M. Covington</remarks>
-        private int firstFrame = 0;
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public int FirstFrame
-        {
-            get { return firstFrame; }
-        }
+        public int FirstFrame { get; } = 0;
 
         /// <summary>Initialize a VideoStream for an existing stream</summary>
         /// <param name="aviFile">The file that contains the stream</param>
@@ -99,13 +70,13 @@ namespace AviFile
                 throw new NotSupportedException();
             }
 
-            this.frameRate = (float)streamInfo.dwRate / (float)streamInfo.dwScale;
-            this.width = (int)streamInfo.rcFrame.right;
-            this.height = (int)streamInfo.rcFrame.bottom;
-            this.frameSize = bih.bmiHeader.biSizeImage;
-            this.bitsPerPixel = bih.bmiHeader.biBitCount;
-            this.firstFrame = NativeMethods.AVIStreamStart(aviStream);
-            this.framesCount = NativeMethods.AVIStreamLength(aviStream);
+            this.FrameRate = (float)streamInfo.dwRate / (float)streamInfo.dwScale;
+            this.Width = (int)streamInfo.rcFrame.right;
+            this.Height = (int)streamInfo.rcFrame.bottom;
+            this.FrameSize = bih.bmiHeader.biSizeImage;
+            this.BitsPerPixel = bih.bmiHeader.biBitCount;
+            this.FirstFrame = NativeMethods.AVIStreamStart(aviStream);
+            this.FramesCount = NativeMethods.AVIStreamLength(aviStream);
         }
 
         private static Avi.AVISTREAMINFO GetStreamInfo(IntPtr aviStream)
@@ -119,26 +90,31 @@ namespace AviFile
             return streamInfo;
         }
 
+
         /// <summary>Prepare for decompressing frames</summary>
         /// <remarks>
         /// This method has to be called before GetBitmap and ExportBitmap.
         /// Release ressources with GetFrameClose.
         /// </remarks>
+        [SuppressMessage("Globalization", "CA1303:Ne pas passer de littéraux en paramètres localisés", Justification = "Reviewed.")]
         public void GetFrameOpen()
         {
             //Open frames
 
-            Avi.BITMAPINFOHEADER bih = new Avi.BITMAPINFOHEADER();
-            bih.biBitCount = bitsPerPixel;
-            bih.biClrImportant = 0;
-            bih.biClrUsed = 0;
-            bih.biCompression = 0;
-            bih.biPlanes = 1;
+            Avi.BITMAPINFOHEADER bih = new Avi.BITMAPINFOHEADER
+            {
+                biBitCount = BitsPerPixel,
+                biClrImportant = 0,
+                biClrUsed = 0,
+                biCompression = 0,
+                biPlanes = 1,
+                biXPelsPerMeter = 0,
+                biYPelsPerMeter = 0,
+                biHeight = 0,
+                biWidth = 0
+            };
+
             bih.biSize = Marshal.SizeOf(bih);
-            bih.biXPelsPerMeter = 0;
-            bih.biYPelsPerMeter = 0;
-            bih.biHeight = 0;
-            bih.biWidth = 0;
 
             getFrameObject = NativeMethods.AVIStreamGetFrameOpen(StreamPointer, ref bih);
 
@@ -148,18 +124,20 @@ namespace AviFile
             }
         }
 
+
         /// <summary>Returns all data needed to copy the frame</summary>
         /// <param name="position">Position of the frame</param>
         /// <returns>The frame data</returns>
+        [SuppressMessage("Globalization", "CA1303:Ne pas passer de littéraux en paramètres localisés", Justification = "Reviewed.")]
         public byte[] GetFrameData(int position)
         {
-            if (position > framesCount)
+            if (position > FramesCount)
             {
                 throw new AviFileException("Invalid frame position: " + position);
             }
 
             //Decompress the frame and return a pointer to the DIB
-            IntPtr dib = NativeMethods.AVIStreamGetFrame(getFrameObject, firstFrame + position);
+            IntPtr dib = NativeMethods.AVIStreamGetFrame(getFrameObject, FirstFrame + position);
 
             if (dib == IntPtr.Zero)
             {
@@ -181,9 +159,9 @@ namespace AviFile
             Marshal.Copy(dibPointer, bitmapData, 0, bih.biSizeImage);
 
             // flip vertical
-            int stride = this.width * this.bitsPerPixel / 8;
-            int length = stride * (this.height - 1);
-            int length2 = stride * this.height / 2;
+            int stride = this.Width * this.BitsPerPixel / 8;
+            int length = stride * (this.Height - 1);
+            int length2 = stride * this.Height / 2;
 
             for (int row = 0; row < length2; row += stride)
             {

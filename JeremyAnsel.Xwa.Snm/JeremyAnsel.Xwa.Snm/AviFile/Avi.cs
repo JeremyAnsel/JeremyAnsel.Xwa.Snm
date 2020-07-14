@@ -33,15 +33,15 @@ namespace AviFile
 
         public static int RGBQUAD_SIZE = 4;
 
-        public static readonly int streamtypeVIDEO = mmioFOURCC('v', 'i', 'd', 's');
-        public static readonly int streamtypeAUDIO = mmioFOURCC('a', 'u', 'd', 's');
+        public static readonly int streamtypeVIDEO = MmioFOURCC('v', 'i', 'd', 's');
+        public static readonly int streamtypeAUDIO = MmioFOURCC('a', 'u', 'd', 's');
 
         public const int OF_READWRITE = 2;
 
         public const int AVIERR_NODATA = -2147205005;
 
         //macro mmioFOURCC
-        public static int mmioFOURCC(char ch0, char ch1, char ch2, char ch3)
+        public static int MmioFOURCC(char ch0, char ch1, char ch2, char ch3)
         {
             return ((int)(byte)(ch0) | ((byte)(ch1) << 8) |
             ((byte)(ch2) << 16) | ((byte)(ch3) << 24));
