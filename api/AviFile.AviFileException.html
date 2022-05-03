@@ -10,14 +10,14 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class AviFileException
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:navrel" content="../toc">
+    <meta property="docfx:tocrel" content="toc">
     
     <meta property="docfx:rel" content="../">
     
@@ -46,7 +46,15 @@
                   <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
                 </div>
               </form>
-            </div>
+                
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../api/index.html" title="Api Documentation">Api Documentation</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/JeremyAnsel/JeremyAnsel.Xwa.Snm" title="Source Code">Source Code</a>
+                      </li>
+                </ul>    </div>
           </div>
         </nav>
         
@@ -61,19 +69,73 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
-        
         <div class="sidenav hide-when-search">
           <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
           <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="AviFile.html" title="AviFile" class="">AviFile</a>
+                        
+                        <ul class="nav level2">
+                          <li class="active">
+                            <a href="AviFile.AviFileException.html" title="AviFileException" class="active">AviFileException</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="JeremyAnsel.Xwa.Snm.html" title="JeremyAnsel.Xwa.Snm" class="">JeremyAnsel.Xwa.Snm</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="JeremyAnsel.Xwa.Snm.Blocky16.html" title="Blocky16" class="">Blocky16</a>
+                          </li>
+                          <li class="">
+                            <a href="JeremyAnsel.Xwa.Snm.Blocky16Context.html" title="Blocky16Context" class="">Blocky16Context</a>
+                          </li>
+                          <li class="">
+                            <a href="JeremyAnsel.Xwa.Snm.SnmAudioFrame.html" title="SnmAudioFrame" class="">SnmAudioFrame</a>
+                          </li>
+                          <li class="">
+                            <a href="JeremyAnsel.Xwa.Snm.SnmAudioHeader.html" title="SnmAudioHeader" class="">SnmAudioHeader</a>
+                          </li>
+                          <li class="">
+                            <a href="JeremyAnsel.Xwa.Snm.SnmFile.html" title="SnmFile" class="">SnmFile</a>
+                          </li>
+                          <li class="">
+                            <a href="JeremyAnsel.Xwa.Snm.SnmFrame.html" title="SnmFrame" class="">SnmFrame</a>
+                          </li>
+                          <li class="">
+                            <a href="JeremyAnsel.Xwa.Snm.SnmHeader.html" title="SnmHeader" class="">SnmHeader</a>
+                          </li>
+                          <li class="">
+                            <a href="JeremyAnsel.Xwa.Snm.SnmVideoFrame.html" title="SnmVideoFrame" class="">SnmVideoFrame</a>
+                          </li>
+                          <li class="">
+                            <a href="JeremyAnsel.Xwa.Snm.SnmVideoHeader.html" title="SnmVideoHeader" class="">SnmVideoHeader</a>
+                          </li>
+                        </ul>  </li>
+                  </ul>        </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="article row grid-right">
@@ -94,63 +156,62 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a></div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.interopservices._exception">_Exception</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.getbaseexception#System_Exception_GetBaseException">Exception.GetBaseException()</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.getbaseexception#system-exception-getbaseexception">Exception.GetBaseException()</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.tostring#System_Exception_ToString">Exception.ToString()</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.getobjectdata#system-exception-getobjectdata(system-runtime-serialization-serializationinfo-system-runtime-serialization-streamingcontext)">Exception.GetObjectData(SerializationInfo, StreamingContext)</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.getobjectdata#System_Exception_GetObjectData_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_">Exception.GetObjectData(SerializationInfo, StreamingContext)</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.gettype#system-exception-gettype">Exception.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.gettype#System_Exception_GetType">Exception.GetType()</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.tostring#system-exception-tostring">Exception.ToString()</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.message#System_Exception_Message">Exception.Message</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.data#system-exception-data">Exception.Data</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.data#System_Exception_Data">Exception.Data</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.helplink#system-exception-helplink">Exception.HelpLink</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.innerexception#System_Exception_InnerException">Exception.InnerException</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.hresult#system-exception-hresult">Exception.HResult</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.targetsite#System_Exception_TargetSite">Exception.TargetSite</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.innerexception#system-exception-innerexception">Exception.InnerException</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.stacktrace#System_Exception_StackTrace">Exception.StackTrace</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.message#system-exception-message">Exception.Message</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.helplink#System_Exception_HelpLink">Exception.HelpLink</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.source#system-exception-source">Exception.Source</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.source#System_Exception_Source">Exception.Source</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.stacktrace#system-exception-stacktrace">Exception.StackTrace</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.hresult#System_Exception_HResult">Exception.HResult</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.targetsite#system-exception-targetsite">Exception.TargetSite</a>
     </div>
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception.serializeobjectstate">Exception.SerializeObjectState</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
     </div>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="AviFile.html">AviFile</a></h6>
@@ -158,7 +219,7 @@
   <h5 id="AviFile_AviFileException_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class AviFileException : Exception, ISerializable, _Exception</code></pre>
+public class AviFileException : Exception, ISerializable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -287,9 +348,6 @@ public class AviFileException : Exception, ISerializable, _Exception</code></pre
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">System.Runtime.Serialization.ISerializable</a>
   </div>
-  <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.interopservices._exception">System.Runtime.InteropServices._Exception</a>
-  </div>
 </article>
           </div>
           
@@ -306,7 +364,8 @@ public class AviFileException : Exception, ISerializable, _Exception</code></pre
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>
@@ -320,8 +379,8 @@ public class AviFileException : Exception, ISerializable, _Exception</code></pre
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
+            Copyright (c) 2017-2022 J&eacute;r&eacute;my Ansel
             
-            <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>

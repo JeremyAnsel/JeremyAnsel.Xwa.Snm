@@ -479,19 +479,6 @@ references:
   isSpec: "True"
   fullName: JeremyAnsel.Xwa.Snm.SnmFile.Save
   nameWithType: SnmFile.Save
-- uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMotionJpeg(System.String)
-  name: SaveAsAviMotionJpeg(String)
-  href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_SaveAsAviMotionJpeg_System_String_
-  commentId: M:JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMotionJpeg(System.String)
-  fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMotionJpeg(System.String)
-  nameWithType: SnmFile.SaveAsAviMotionJpeg(String)
-- uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMotionJpeg*
-  name: SaveAsAviMotionJpeg
-  href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_SaveAsAviMotionJpeg_
-  commentId: Overload:JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMotionJpeg
-  isSpec: "True"
-  fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMotionJpeg
-  nameWithType: SnmFile.SaveAsAviMotionJpeg
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMpeg4(System.String)
   name: SaveAsAviMpeg4(String)
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_SaveAsAviMpeg4_System_String_
