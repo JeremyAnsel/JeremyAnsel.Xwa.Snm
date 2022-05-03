@@ -416,6 +416,7 @@ namespace JeremyAnsel.Xwa.Snm
             return true;
         }
 
+#if NET48
         [SuppressMessage("Microsoft.Reliability", "CA2000:Supprimer les objets avant la mise hors de portée")]
         public void SaveAsAviMotionJpeg(string fileName)
         {
@@ -427,7 +428,7 @@ namespace JeremyAnsel.Xwa.Snm
 
             try
             {
-                IAviVideoStream videoStream = writer.AddMotionJpegVideoStream(this.Header.Width, this.Header.Height, 100);
+                IAviVideoStream videoStream = writer.AddMJpegWpfVideoStream(this.Header.Width, this.Header.Height, 100);
                 IAviAudioStream audioStream = writer.AddAudioStream(this.AudioHeader.NumChannels, this.AudioHeader.Frequency, 16);
 
                 this.BeginPlay();
@@ -458,6 +459,7 @@ namespace JeremyAnsel.Xwa.Snm
                 writer.Close();
             }
         }
+#endif
 
         [SuppressMessage("Microsoft.Reliability", "CA2000:Supprimer les objets avant la mise hors de portée")]
         public void SaveAsAviMpeg4(string fileName)
@@ -470,7 +472,7 @@ namespace JeremyAnsel.Xwa.Snm
 
             try
             {
-                IAviVideoStream videoStream = writer.AddMpeg4VideoStream(this.Header.Width, this.Header.Height, (int)writer.FramesPerSecond, 0, 100);
+                IAviVideoStream videoStream = writer.AddMpeg4VcmVideoStream(this.Header.Width, this.Header.Height, (int)writer.FramesPerSecond, 0, 100);
                 IAviAudioStream audioStream = writer.AddAudioStream(this.AudioHeader.NumChannels, this.AudioHeader.Frequency, 16);
 
                 this.BeginPlay();
