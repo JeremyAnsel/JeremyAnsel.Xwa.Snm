@@ -13,12 +13,180 @@
       "is_incremental": false
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AviFile.AviFileException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AviFile.AviFileException.html",
+          "hash": "rHC1/XzPo0IyQDPAgDv9iHmujeOSwM0VO6pPsB5/qWw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AviFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AviFile.html",
+          "hash": "njMQAs9VIM16iZHMMGFrrhWa3r1cCVM8EaX1uioP5Gc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.Blocky16.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.Blocky16.html",
+          "hash": "vAMY5wA4dEKxvRutLx5xUtJ8guX33A4WTb+QzfM28PA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.Blocky16Context.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.Blocky16Context.html",
+          "hash": "hDC3Hg5ArbFxfg7wemIfw1rbp+kRMk+W0U7dV4cxGUQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmAudioFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmAudioFrame.html",
+          "hash": "ILLbQRePToSphUrukM1YUuwXBZrLIYd/f+Rwl+R2st0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmAudioHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmAudioHeader.html",
+          "hash": "c0iafstDZI59F7yyy/lLfzD7p8sCskKyZPB5Vmy+ymQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmFile.html",
+          "hash": "dj1A0ll9OWN+6W9O8GLrx7BrmoibVyhltKYS0fraAe4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmFrame.html",
+          "hash": "D79IlqsoUd6/6m6JdmqpfXcF6KoQJ0f7G2LQgzNmyZ8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmHeader.html",
+          "hash": "z0DsrFFOMCoQ1ZUON8PT1lVzvhltk33ts9liI+Vd5dA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmSubtitle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmSubtitle.html",
+          "hash": "qKKGSy4aU6zhXu6Y4K3tJmXxe4+Sb5zobQqv4DSsOd8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.html",
+          "hash": "S4DeL/SAU5H7o9SgKRklYHN+DuWQH5WCQr2nGBTAWJw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmVideoFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmVideoFrame.html",
+          "hash": "sz5d5lNycSVuZsQWQm4eHkAyGrrL2OOfbnMBYiX8+J4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmVideoHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmVideoHeader.html",
+          "hash": "dEHtR1UBpdZc8QQiN/YiMWl3+8G4TtLWQjwWt4Wpppo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.html",
+          "hash": "mFyNhA231hTwASoWUFOx5z1zzwKrGw6Y39fxeq3qWzU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "kx0D7fKyXf2+TI4fJkDtgjg3QxniZ4pxSSLn5I/JPiE="
+          "hash": "bbMXgwBV1cs/hFp4yLz4RKyyPijA9Nj2nrfPw3RronQ="
         }
       },
       "is_incremental": false,
@@ -30,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "yHL6lx9Q26a2bVKhVeqNtWR6sjZXwEWzgalfPh/prlw="
+          "hash": "meijY1fJQ/ucIqXk3S3lHfp1VqtCUecPt/uaixJCgWo="
         }
       },
       "is_incremental": false,
@@ -52,6 +220,12 @@
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 2,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 14,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
