@@ -32,6 +32,11 @@ namespace JeremyAnsel.Xwa.Snm
 
         public static void ConvertWrite(SnmFile snm, string fileName)
         {
+            ConvertWrite(snm, fileName, false);
+        }
+
+        public static void ConvertWrite(SnmFile snm, string fileName, bool addSubtitles)
+        {
             if (snm == null)
             {
                 throw new ArgumentNullException(nameof(snm));
@@ -42,8 +47,16 @@ namespace JeremyAnsel.Xwa.Snm
                 throw new ArgumentNullException(nameof(fileName));
             }
 
+            if (addSubtitles)
+            {
+                if (snm.Subtitles == null)
+                {
+                    addSubtitles = false;
+                }
+            }
+
             int fps = (1000000 + snm.Header.FrameDelay / 2) / snm.Header.FrameDelay;
-            long frameDuration = 10 * 1000 * 1000 / fps;
+            long frameDuration = 10 * snm.Header.FrameDelay;
 
             InitializeSinkWriter(
                 fileName,
@@ -58,6 +71,11 @@ namespace JeremyAnsel.Xwa.Snm
             {
                 snm.BeginPlay();
 
+                if (addSubtitles)
+                {
+                    SnmSubtitlesHelpers.Begin();
+                }
+
                 try
                 {
                     long rtStartVideo = 0;
@@ -67,6 +85,13 @@ namespace JeremyAnsel.Xwa.Snm
                     {
                         if (videoData != null)
                         {
+                            if (addSubtitles)
+                            {
+                                byte[] buffer = Convert16BppTo32Bpp(videoData);
+                                SnmSubtitlesHelpers.DrawSubtitle(snm.Subtitles, buffer, snm.Header.Width, snm.Header.Height, rtStartVideo);
+                                videoData = Convert32BppTo16Bpp(buffer);
+                            }
+
                             WriteVideoFrame(snm.Header.Width, snm.Header.Height, frameDuration, writer, videoStream, rtStartVideo, videoData);
                             rtStartVideo += frameDuration;
                         }
@@ -82,6 +107,11 @@ namespace JeremyAnsel.Xwa.Snm
                 }
                 finally
                 {
+                    if (addSubtitles)
+                    {
+                        SnmSubtitlesHelpers.End();
+                    }
+
                     snm.EndPlay();
                 }
 
@@ -678,6 +708,33 @@ namespace JeremyAnsel.Xwa.Snm
                 ushort c = (ushort)((b << 11) | (g << 5) | r);
                 buffer[i * 2] = (byte)(c & 0xff);
                 buffer[i * 2 + 1] = (byte)((c >> 8) & 0xff);
+            }
+
+            return buffer;
+        }
+
+        private static byte[] Convert16BppTo32Bpp(byte[] bytes)
+        {
+            int length = bytes.Length / 2;
+            var buffer = new byte[length * 4];
+
+            for (int i = 0; i < length; i++)
+            {
+                ushort color = BitConverter.ToUInt16(bytes, i * 2);
+
+                byte a = 0xff;
+                byte r = (byte)((color & 0xF800U) >> 11);
+                byte g = (byte)((color & 0x7E0U) >> 5);
+                byte b = (byte)(color & 0x1FU);
+
+                r = (byte)((r * (0xffU * 2) + 0x1fU) / (0x1fU * 2));
+                g = (byte)((g * (0xffU * 2) + 0x3fU) / (0x3fU * 2));
+                b = (byte)((b * (0xffU * 2) + 0x1fU) / (0x1fU * 2));
+
+                buffer[i * 4 + 0] = b;
+                buffer[i * 4 + 1] = g;
+                buffer[i * 4 + 2] = r;
+                buffer[i * 4 + 3] = a;
             }
 
             return buffer;

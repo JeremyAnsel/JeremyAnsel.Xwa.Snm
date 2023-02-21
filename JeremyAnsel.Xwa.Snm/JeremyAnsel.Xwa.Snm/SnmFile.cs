@@ -45,6 +45,8 @@ namespace JeremyAnsel.Xwa.Snm
 
         public Blocky16Context CurrentFrameContext { get; private set; }
 
+        public SnmSubtitlesFile Subtitles { get; set; }
+
         public static SnmFile FromFile(string fileName)
         {
             var snm = new SnmFile
@@ -226,6 +228,13 @@ namespace JeremyAnsel.Xwa.Snm
                 {
                     filestream.Dispose();
                 }
+            }
+
+            string subtitlesFileName = Path.ChangeExtension(fileName, "sub");
+
+            if (File.Exists(subtitlesFileName))
+            {
+                snm.Subtitles = SnmSubtitlesFile.FromFile(subtitlesFileName);
             }
 
             return snm;
@@ -504,14 +513,19 @@ namespace JeremyAnsel.Xwa.Snm
             }
         }
 
-        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Mp")]
         public void SaveAsMp4(string fileName)
+        {
+            this.SaveAsMp4(fileName, false);
+        }
+
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Mp")]
+        public void SaveAsMp4(string fileName, bool addSubtitles)
         {
             SnmMp4Helpers.Startup();
 
             try
             {
-                SnmMp4Helpers.ConvertWrite(this, fileName);
+                SnmMp4Helpers.ConvertWrite(this, fileName, addSubtitles);
             }
             finally
             {
