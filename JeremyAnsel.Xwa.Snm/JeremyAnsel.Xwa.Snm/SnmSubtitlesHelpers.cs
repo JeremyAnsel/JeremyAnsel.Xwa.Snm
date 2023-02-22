@@ -111,9 +111,9 @@ namespace JeremyAnsel.Xwa.Snm
                     long start = subtitle.StartFrame * (long)(10000000 / 15);
                     long end = subtitle.EndFrame * (long)(10000000 / 15);
                     long startFade = start + 10 * (long)(10000000 / 15);
-                    long endFade = end - 10 * (long)(10000000 / 15);
+                    long endFade = end + 10 * (long)(10000000 / 15);
 
-                    if (start <= frame && frame <= end)
+                    if (start <= frame && frame <= endFade)
                     {
                         float a;
 
@@ -121,9 +121,9 @@ namespace JeremyAnsel.Xwa.Snm
                         {
                             a = (float)(frame - start) / (float)(startFade - start);
                         }
-                        else if (frame > endFade)
+                        else if (frame > end)
                         {
-                            a = (float)(end - frame) / (float)(end - endFade);
+                            a = (float)(endFade - frame) / (float)(endFade - end);
                         }
                         else
                         {
@@ -151,10 +151,26 @@ namespace JeremyAnsel.Xwa.Snm
                             _ => _textFormat15
                         };
 
+                        D2D1RectF layoutRect = new(x, y, x + width, y + height);
+
+                        if (x < 0)
+                        {
+                            textFormat.TextAlignment = DWriteTextAlignment.Center;
+                            layoutRect.Left = 0;
+                            layoutRect.Right = width;
+                        }
+
+                        if (y < 0)
+                        {
+                            textFormat.ParagraphAlignment = DWriteParagraphAlignment.Center;
+                            layoutRect.Top = 0;
+                            layoutRect.Bottom = height;
+                        }
+
                         _d2dRenderTarget.DrawText(
                             text,
                             textFormat,
-                            new D2D1RectF(x, y, x + width, y + height),
+                            layoutRect,
                             _brush);
                     }
                 }
