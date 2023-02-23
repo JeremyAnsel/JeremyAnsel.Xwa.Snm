@@ -159,12 +159,20 @@ namespace JeremyAnsel.Xwa.Snm
                             layoutRect.Left = 0;
                             layoutRect.Right = width;
                         }
+                        else
+                        {
+                            textFormat.TextAlignment = DWriteTextAlignment.Leading;
+                        }
 
                         if (y < 0)
                         {
                             textFormat.ParagraphAlignment = DWriteParagraphAlignment.Center;
                             layoutRect.Top = 0;
                             layoutRect.Bottom = height;
+                        }
+                        else
+                        {
+                            textFormat.ParagraphAlignment = DWriteParagraphAlignment.Near;
                         }
 
                         _d2dRenderTarget.DrawText(
