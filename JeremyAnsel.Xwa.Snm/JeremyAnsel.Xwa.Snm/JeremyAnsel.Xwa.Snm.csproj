@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net48</TargetFrameworks>
+    <TargetFrameworks>net6.0;net48;netstandard2.0</TargetFrameworks>
     <LangVersion>10.0</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
@@ -19,6 +19,7 @@
     <Copyright>Copyright © 2017-2022 Jérémy Ansel</Copyright>
     <PackageTags>Xwa Snm Avi Mp4 Movie Video Audio Converter Encoder Decoder</PackageTags>
     <PackageProjectUrl>https://github.com/JeremyAnsel/JeremyAnsel.Xwa.Snm</PackageProjectUrl>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,13 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="JeremyAnsel.DirectX.D2D1" Version="3.0.26" />
-    <PackageReference Include="JeremyAnsel.Xwa.Imc" Version="3.0.6" />
+    <PackageReference Include="JeremyAnsel.DirectX.D2D1" Version="3.0.30" />
+    <PackageReference Include="JeremyAnsel.Xwa.Imc" Version="3.0.7" />
     <PackageReference Include="MediaFoundation.NetCore" Version="3.1.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Condition="'$(CI)' == 'True'" Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
