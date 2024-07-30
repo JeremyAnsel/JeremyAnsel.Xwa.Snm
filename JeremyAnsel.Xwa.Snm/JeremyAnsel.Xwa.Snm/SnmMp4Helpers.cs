@@ -1,14 +1,8 @@
 ﻿using AviFile;
 using MediaFoundation;
 using MediaFoundation.ReadWrite;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JeremyAnsel.Xwa.Snm
 {
@@ -60,8 +54,8 @@ namespace JeremyAnsel.Xwa.Snm
 
             InitializeSinkWriter(
                 fileName,
-                snm.Header.Width,
-                snm.Header.Height,
+                snm.Header,
+                snm.AudioHeader,
                 fps,
                 out IMFSinkWriter writer,
                 out int videoStream,
@@ -98,9 +92,14 @@ namespace JeremyAnsel.Xwa.Snm
 
                         if (audioData != null)
                         {
-                            byte[] buffer = ConvertAudio22050To44100(audioData);
-                            long duration = (long)(10 * 1000 * 1000) * audioData.Length / (22050 * 4);
-                            WriteAudioFrame(duration, writer, audioStream, rtStartAudio, buffer);
+                            int sampleSize = 2 * snm.AudioHeader.NumChannels;
+                            int count = audioData.Reverse().Count(i => i == 0) / sampleSize * sampleSize;
+                            byte[] buffer = audioData.Take(audioData.Length - count).ToArray();
+                            long bufferDuration = (long)(10 * 1000 * 1000) * buffer.Length / (snm.AudioHeader.Frequency * 2 * snm.AudioHeader.NumChannels);
+
+                            long duration = (long)(10 * 1000 * 1000) * audioData.Length / (snm.AudioHeader.Frequency * 2 * snm.AudioHeader.NumChannels);
+                            WriteAudioFrame(bufferDuration, writer, audioStream, rtStartAudio, buffer);
+
                             rtStartAudio += duration;
                         }
                     }
@@ -290,8 +289,11 @@ namespace JeremyAnsel.Xwa.Snm
             return bytes;
         }
 
-        private static void InitializeSinkWriter(string outputUrl, int width, int height, int fps, out IMFSinkWriter writer, out int videoStreamIndex, out int audioStreamIndex)
+        private static void InitializeSinkWriter(string outputUrl, SnmHeader header, SnmAudioHeader audioHeader, int fps, out IMFSinkWriter writer, out int videoStreamIndex, out int audioStreamIndex)
         {
+            int width = header.Width;
+            int height = header.Height;
+
             Marshal.ThrowExceptionForHR((int)MFExtern.MFCreateAttributes(out IMFAttributes attributes, 0));
 
             try
@@ -371,8 +373,8 @@ namespace JeremyAnsel.Xwa.Snm
                     Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetGUID(MFAttributesClsid.MF_MT_MAJOR_TYPE, MFMediaType.Audio));
                     Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetGUID(MFAttributesClsid.MF_MT_SUBTYPE, MFMediaType.PCM));
                     Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetUINT32(MFAttributesClsid.MF_MT_AUDIO_BITS_PER_SAMPLE, 16));
-                    Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetUINT32(MFAttributesClsid.MF_MT_AUDIO_SAMPLES_PER_SECOND, 44100));
-                    Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetUINT32(MFAttributesClsid.MF_MT_AUDIO_NUM_CHANNELS, 2));
+                    Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetUINT32(MFAttributesClsid.MF_MT_AUDIO_SAMPLES_PER_SECOND, audioHeader.Frequency));
+                    Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetUINT32(MFAttributesClsid.MF_MT_AUDIO_NUM_CHANNELS, audioHeader.NumChannels));
                     Marshal.ThrowExceptionForHR((int)writer.SetInputMediaType(audioStreamIndex, audioMediaTypeIn, null));
                 }
                 finally
@@ -641,30 +643,6 @@ namespace JeremyAnsel.Xwa.Snm
                     Marshal.ReleaseComObject(sample);
                 }
             }
-        }
-
-        private static byte[] ConvertAudio22050To44100(byte[] audioData)
-        {
-            byte[] buffer = new byte[audioData.Length * 2];
-
-            for (int i = 0; i < audioData.Length; i += 4)
-            {
-                byte val0 = audioData[i + 0];
-                byte val1 = audioData[i + 1];
-                byte val2 = audioData[i + 2];
-                byte val3 = audioData[i + 3];
-
-                buffer[i * 2 + 0] = val0;
-                buffer[i * 2 + 1] = val1;
-                buffer[i * 2 + 2] = val2;
-                buffer[i * 2 + 3] = val3;
-                buffer[i * 2 + 4] = val0;
-                buffer[i * 2 + 5] = val1;
-                buffer[i * 2 + 6] = val2;
-                buffer[i * 2 + 7] = val3;
-            }
-
-            return buffer;
         }
 
         private static byte[] ConvertAudio44100To22050(byte[] audioData)
