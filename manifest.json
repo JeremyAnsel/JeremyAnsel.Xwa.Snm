@@ -1,5 +1,4 @@
 {
-  "homepages": [],
   "source_base_path": "C:/projects/jeremyansel-xwa-snm/JeremyAnsel.Xwa.Snm/Documentation",
   "xrefmap": "xrefmap.yml",
   "files": [
@@ -16,8 +15,7 @@
       "source_relative_path": "api/AviFile.AviFileException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/AviFile.AviFileException.html",
-          "hash": "pOU+yN5TMEDE9P3qKnuADOpW/ucQGdok3N5ZiB9VzdY="
+          "relative_path": "api/AviFile.AviFileException.html"
         }
       },
       "version": ""
@@ -27,8 +25,7 @@
       "source_relative_path": "api/AviFile.yml",
       "output": {
         ".html": {
-          "relative_path": "api/AviFile.html",
-          "hash": "NEQFs9LbAxn/9rgLq9VYugj3ZmGP60q6bIQPG1EDO9E="
+          "relative_path": "api/AviFile.html"
         }
       },
       "version": ""
@@ -38,8 +35,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.Blocky16.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.Blocky16.html",
-          "hash": "bd9LKPLTy6UlC1G3u0+FZIhkNreO1L78PBaKsRx7UrQ="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.Blocky16.html"
         }
       },
       "version": ""
@@ -49,8 +45,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.Blocky16Context.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.Blocky16Context.html",
-          "hash": "umb1rlC/KFIRqZRd7g4UWRpShb2f9vH/U4i58kWt3eI="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.Blocky16Context.html"
         }
       },
       "version": ""
@@ -60,8 +55,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmAudioFrame.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmAudioFrame.html",
-          "hash": "YeXk4DshW9l1X15iHyEPkAYqMdO0USL4m+UE4npgvIc="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmAudioFrame.html"
         }
       },
       "version": ""
@@ -71,8 +65,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmAudioHeader.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmAudioHeader.html",
-          "hash": "ckjJE+MK6POsyjTk4ZHANU9NdI/4iJ8bf7DDelj+jbk="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmAudioHeader.html"
         }
       },
       "version": ""
@@ -82,8 +75,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmFile.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmFile.html",
-          "hash": "yrpoF/hexypCsOwP9OZUvTmEDqyue+zCS4W59x1PPNI="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmFile.html"
         }
       },
       "version": ""
@@ -93,8 +85,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmFrame.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmFrame.html",
-          "hash": "cozgty09fpD6lUShp7jiKojOVqYzQGB4wjjERt6GwW0="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmFrame.html"
         }
       },
       "version": ""
@@ -104,8 +95,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmHeader.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmHeader.html",
-          "hash": "gmoEPohDbbaqx93MrYSP87FaQ8TyBBtp0Kl0dTmQKx4="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmHeader.html"
         }
       },
       "version": ""
@@ -115,8 +105,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmSubtitle.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmSubtitle.html",
-          "hash": "t3+JoxzgfOBl9zGS3cis7H1zxgaLPzWNRxRAt9V2vSU="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmSubtitle.html"
         }
       },
       "version": ""
@@ -126,8 +115,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.html",
-          "hash": "RxIe3Czf7IhZ5e2NpBIJfNhkbY4tWT+9LEhGfOzjKww="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.html"
         }
       },
       "version": ""
@@ -137,8 +125,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmVideoFrame.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmVideoFrame.html",
-          "hash": "BZvsxmSpfFflGOJyGgQ7nHW/48Olmuy+/5SQPHOihYo="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmVideoFrame.html"
         }
       },
       "version": ""
@@ -148,8 +135,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmVideoHeader.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmVideoHeader.html",
-          "hash": "XMuiqj+EWGgsgw/IIgKp9+qC/ms5KhHaJS8sVWwuZQ0="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmVideoHeader.html"
         }
       },
       "version": ""
@@ -159,8 +145,7 @@
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.yml",
       "output": {
         ".html": {
-          "relative_path": "api/JeremyAnsel.Xwa.Snm.html",
-          "hash": "SzEASY7FLYKCCrOUQBHJruxuGl6nnp3jgrhFbNZrUtY="
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.html"
         }
       },
       "version": ""
@@ -170,8 +155,17 @@
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
-          "relative_path": "api/index.html",
-          "hash": "K3QLNgf7RVL6e8kx2OpOo8+qUKerxfZ7RegrTrv0Zmc="
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""
@@ -181,14 +175,22 @@
       "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "index.html",
-          "hash": "GAM4M06eyGdBZSGCJoAM42i0sqaTtTqzbAut8SyPZ50="
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""
     }
   ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"

@@ -31,15 +31,6 @@ references:
   fullName.vb: AviFile.AviFileException.New(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
   nameWithType: AviFileException.AviFileException(SerializationInfo, StreamingContext)
   nameWithType.vb: AviFileException.New(SerializationInfo, StreamingContext)
-- uid: AviFile.AviFileException.#ctor(System.String,System.Exception)
-  name: AviFileException(string, Exception)
-  href: api/AviFile.AviFileException.html#AviFile_AviFileException__ctor_System_String_System_Exception_
-  commentId: M:AviFile.AviFileException.#ctor(System.String,System.Exception)
-  name.vb: New(String, Exception)
-  fullName: AviFile.AviFileException.AviFileException(string, System.Exception)
-  fullName.vb: AviFile.AviFileException.New(String, System.Exception)
-  nameWithType: AviFileException.AviFileException(string, Exception)
-  nameWithType.vb: AviFileException.New(String, Exception)
 - uid: AviFile.AviFileException.#ctor(System.String)
   name: AviFileException(string)
   href: api/AviFile.AviFileException.html#AviFile_AviFileException__ctor_System_String_
@@ -49,6 +40,15 @@ references:
   fullName.vb: AviFile.AviFileException.New(String)
   nameWithType: AviFileException.AviFileException(string)
   nameWithType.vb: AviFileException.New(String)
+- uid: AviFile.AviFileException.#ctor(System.String,System.Exception)
+  name: AviFileException(string, Exception)
+  href: api/AviFile.AviFileException.html#AviFile_AviFileException__ctor_System_String_System_Exception_
+  commentId: M:AviFile.AviFileException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: AviFile.AviFileException.AviFileException(string, System.Exception)
+  fullName.vb: AviFile.AviFileException.New(String, System.Exception)
+  nameWithType: AviFileException.AviFileException(string, Exception)
+  nameWithType.vb: AviFileException.New(String, Exception)
 - uid: AviFile.AviFileException.#ctor*
   name: AviFileException
   href: api/AviFile.AviFileException.html#AviFile_AviFileException__ctor_
@@ -540,15 +540,6 @@ references:
   isSpec: "True"
   fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMpeg4
   nameWithType: SnmFile.SaveAsAviMpeg4
-- uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(System.String,System.Boolean)
-  name: SaveAsMp4(string, bool)
-  href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_SaveAsMp4_System_String_System_Boolean_
-  commentId: M:JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(System.String,System.Boolean)
-  name.vb: SaveAsMp4(String, Boolean)
-  fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(string, bool)
-  fullName.vb: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(String, Boolean)
-  nameWithType: SnmFile.SaveAsMp4(string, bool)
-  nameWithType.vb: SnmFile.SaveAsMp4(String, Boolean)
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(System.String)
   name: SaveAsMp4(string)
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_SaveAsMp4_System_String_
@@ -558,6 +549,15 @@ references:
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(String)
   nameWithType: SnmFile.SaveAsMp4(string)
   nameWithType.vb: SnmFile.SaveAsMp4(String)
+- uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(System.String,System.Boolean)
+  name: SaveAsMp4(string, bool)
+  href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_SaveAsMp4_System_String_System_Boolean_
+  commentId: M:JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(System.String,System.Boolean)
+  name.vb: SaveAsMp4(String, Boolean)
+  fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(string, bool)
+  fullName.vb: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(String, Boolean)
+  nameWithType: SnmFile.SaveAsMp4(string, bool)
+  nameWithType.vb: SnmFile.SaveAsMp4(String, Boolean)
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4*
   name: SaveAsMp4
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_SaveAsMp4_
