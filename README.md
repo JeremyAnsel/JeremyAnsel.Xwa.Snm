@@ -12,3 +12,9 @@ Documentation   | http://jeremyansel.github.io/JeremyAnsel.Xwa.Snm
 Source code     | https://github.com/JeremyAnsel/JeremyAnsel.Xwa.Snm
 Nuget           | https://www.nuget.org/packages/JeremyAnsel.Xwa.Snm
 Build           | https://ci.appveyor.com/project/JeremyAnsel/jeremyansel-xwa-snm/branch/master
+
+# Usage
+
+```csharp
+SnmFile file = SnmFile.FromFile(fileName);
+```
