@@ -27,15 +27,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="JeremyAnsel.DirectX.D2D1" Version="3.0.30" />
-    <PackageReference Include="JeremyAnsel.Xwa.Imc" Version="3.0.8" />
-    <PackageReference Include="MediaFoundation.NetCore" Version="3.1.0" />
+    <PackageReference Include="JeremyAnsel.DirectX.D2D1" Version="3.0.32" />
+    <PackageReference Include="JeremyAnsel.Xwa.Imc" Version="3.0.9" />
     <PackageReference Condition="'$(CI)' == 'True'" Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="SharpAvi" Version="3.0.1" />
-    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
+    <PackageReference Include="MediaFoundation.NetCore" Version="2024.5.10" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="MediaFoundationCore" Version="3.1.2" />
   </ItemGroup>
 
 </Project>
