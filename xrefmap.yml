@@ -72,13 +72,13 @@ references:
   fullName: JeremyAnsel.Xwa.Snm.Blocky16
   nameWithType: Blocky16
 - uid: JeremyAnsel.Xwa.Snm.Blocky16.Compress(System.Byte[],System.Byte@)
-  name: Compress(byte[], out byte)
+  name: Compress(byte[]?, out byte)
   href: api/JeremyAnsel.Xwa.Snm.Blocky16.html#JeremyAnsel_Xwa_Snm_Blocky16_Compress_System_Byte___System_Byte__
   commentId: M:JeremyAnsel.Xwa.Snm.Blocky16.Compress(System.Byte[],System.Byte@)
   name.vb: Compress(Byte(), Byte)
-  fullName: JeremyAnsel.Xwa.Snm.Blocky16.Compress(byte[], out byte)
+  fullName: JeremyAnsel.Xwa.Snm.Blocky16.Compress(byte[]?, out byte)
   fullName.vb: JeremyAnsel.Xwa.Snm.Blocky16.Compress(Byte(), Byte)
-  nameWithType: Blocky16.Compress(byte[], out byte)
+  nameWithType: Blocky16.Compress(byte[]?, out byte)
   nameWithType.vb: Blocky16.Compress(Byte(), Byte)
 - uid: JeremyAnsel.Xwa.Snm.Blocky16.Compress*
   name: Compress
@@ -88,13 +88,13 @@ references:
   fullName: JeremyAnsel.Xwa.Snm.Blocky16.Compress
   nameWithType: Blocky16.Compress
 - uid: JeremyAnsel.Xwa.Snm.Blocky16.Decompress(System.Byte[],JeremyAnsel.Xwa.Snm.SnmVideoFrame,JeremyAnsel.Xwa.Snm.Blocky16Context)
-  name: Decompress(byte[], SnmVideoFrame, Blocky16Context)
+  name: Decompress(byte[]?, SnmVideoFrame?, Blocky16Context?)
   href: api/JeremyAnsel.Xwa.Snm.Blocky16.html#JeremyAnsel_Xwa_Snm_Blocky16_Decompress_System_Byte___JeremyAnsel_Xwa_Snm_SnmVideoFrame_JeremyAnsel_Xwa_Snm_Blocky16Context_
   commentId: M:JeremyAnsel.Xwa.Snm.Blocky16.Decompress(System.Byte[],JeremyAnsel.Xwa.Snm.SnmVideoFrame,JeremyAnsel.Xwa.Snm.Blocky16Context)
   name.vb: Decompress(Byte(), SnmVideoFrame, Blocky16Context)
-  fullName: JeremyAnsel.Xwa.Snm.Blocky16.Decompress(byte[], JeremyAnsel.Xwa.Snm.SnmVideoFrame, JeremyAnsel.Xwa.Snm.Blocky16Context)
+  fullName: JeremyAnsel.Xwa.Snm.Blocky16.Decompress(byte[]?, JeremyAnsel.Xwa.Snm.SnmVideoFrame?, JeremyAnsel.Xwa.Snm.Blocky16Context?)
   fullName.vb: JeremyAnsel.Xwa.Snm.Blocky16.Decompress(Byte(), JeremyAnsel.Xwa.Snm.SnmVideoFrame, JeremyAnsel.Xwa.Snm.Blocky16Context)
-  nameWithType: Blocky16.Decompress(byte[], SnmVideoFrame, Blocky16Context)
+  nameWithType: Blocky16.Decompress(byte[]?, SnmVideoFrame?, Blocky16Context?)
   nameWithType.vb: Blocky16.Decompress(Byte(), SnmVideoFrame, Blocky16Context)
 - uid: JeremyAnsel.Xwa.Snm.Blocky16.Decompress*
   name: Decompress
@@ -419,13 +419,13 @@ references:
   fullName: JeremyAnsel.Xwa.Snm.SnmFile.Frames
   nameWithType: SnmFile.Frames
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.FromAviFile(System.String)
-  name: FromAviFile(string)
+  name: FromAviFile(string?)
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_FromAviFile_System_String_
   commentId: M:JeremyAnsel.Xwa.Snm.SnmFile.FromAviFile(System.String)
   name.vb: FromAviFile(String)
-  fullName: JeremyAnsel.Xwa.Snm.SnmFile.FromAviFile(string)
+  fullName: JeremyAnsel.Xwa.Snm.SnmFile.FromAviFile(string?)
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmFile.FromAviFile(String)
-  nameWithType: SnmFile.FromAviFile(string)
+  nameWithType: SnmFile.FromAviFile(string?)
   nameWithType.vb: SnmFile.FromAviFile(String)
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.FromAviFile*
   name: FromAviFile
@@ -435,13 +435,13 @@ references:
   fullName: JeremyAnsel.Xwa.Snm.SnmFile.FromAviFile
   nameWithType: SnmFile.FromAviFile
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.FromFile(System.String)
-  name: FromFile(string)
+  name: FromFile(string?)
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_FromFile_System_String_
   commentId: M:JeremyAnsel.Xwa.Snm.SnmFile.FromFile(System.String)
   name.vb: FromFile(String)
-  fullName: JeremyAnsel.Xwa.Snm.SnmFile.FromFile(string)
+  fullName: JeremyAnsel.Xwa.Snm.SnmFile.FromFile(string?)
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmFile.FromFile(String)
-  nameWithType: SnmFile.FromFile(string)
+  nameWithType: SnmFile.FromFile(string?)
   nameWithType.vb: SnmFile.FromFile(String)
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.FromFile*
   name: FromFile
@@ -451,13 +451,13 @@ references:
   fullName: JeremyAnsel.Xwa.Snm.SnmFile.FromFile
   nameWithType: SnmFile.FromFile
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.FromMFFile(System.String)
-  name: FromMFFile(string)
+  name: FromMFFile(string?)
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_FromMFFile_System_String_
   commentId: M:JeremyAnsel.Xwa.Snm.SnmFile.FromMFFile(System.String)
   name.vb: FromMFFile(String)
-  fullName: JeremyAnsel.Xwa.Snm.SnmFile.FromMFFile(string)
+  fullName: JeremyAnsel.Xwa.Snm.SnmFile.FromMFFile(string?)
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmFile.FromMFFile(String)
-  nameWithType: SnmFile.FromMFFile(string)
+  nameWithType: SnmFile.FromMFFile(string?)
   nameWithType.vb: SnmFile.FromMFFile(String)
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.FromMFFile*
   name: FromMFFile
@@ -493,13 +493,13 @@ references:
   fullName: JeremyAnsel.Xwa.Snm.SnmFile.Name
   nameWithType: SnmFile.Name
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.RetrieveNextFrame(System.Byte[]@,System.Byte[]@)
-  name: RetrieveNextFrame(out byte[], out byte[])
+  name: RetrieveNextFrame(out byte[]?, out byte[]?)
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_RetrieveNextFrame_System_Byte____System_Byte____
   commentId: M:JeremyAnsel.Xwa.Snm.SnmFile.RetrieveNextFrame(System.Byte[]@,System.Byte[]@)
   name.vb: RetrieveNextFrame(Byte(), Byte())
-  fullName: JeremyAnsel.Xwa.Snm.SnmFile.RetrieveNextFrame(out byte[], out byte[])
+  fullName: JeremyAnsel.Xwa.Snm.SnmFile.RetrieveNextFrame(out byte[]?, out byte[]?)
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmFile.RetrieveNextFrame(Byte(), Byte())
-  nameWithType: SnmFile.RetrieveNextFrame(out byte[], out byte[])
+  nameWithType: SnmFile.RetrieveNextFrame(out byte[]?, out byte[]?)
   nameWithType.vb: SnmFile.RetrieveNextFrame(Byte(), Byte())
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.RetrieveNextFrame*
   name: RetrieveNextFrame
@@ -509,13 +509,13 @@ references:
   fullName: JeremyAnsel.Xwa.Snm.SnmFile.RetrieveNextFrame
   nameWithType: SnmFile.RetrieveNextFrame
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.Save(System.String)
-  name: Save(string)
+  name: Save(string?)
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_Save_System_String_
   commentId: M:JeremyAnsel.Xwa.Snm.SnmFile.Save(System.String)
   name.vb: Save(String)
-  fullName: JeremyAnsel.Xwa.Snm.SnmFile.Save(string)
+  fullName: JeremyAnsel.Xwa.Snm.SnmFile.Save(string?)
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmFile.Save(String)
-  nameWithType: SnmFile.Save(string)
+  nameWithType: SnmFile.Save(string?)
   nameWithType.vb: SnmFile.Save(String)
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.Save*
   name: Save
@@ -525,13 +525,13 @@ references:
   fullName: JeremyAnsel.Xwa.Snm.SnmFile.Save
   nameWithType: SnmFile.Save
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMpeg4(System.String)
-  name: SaveAsAviMpeg4(string)
+  name: SaveAsAviMpeg4(string?)
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_SaveAsAviMpeg4_System_String_
   commentId: M:JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMpeg4(System.String)
   name.vb: SaveAsAviMpeg4(String)
-  fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMpeg4(string)
+  fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMpeg4(string?)
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMpeg4(String)
-  nameWithType: SnmFile.SaveAsAviMpeg4(string)
+  nameWithType: SnmFile.SaveAsAviMpeg4(string?)
   nameWithType.vb: SnmFile.SaveAsAviMpeg4(String)
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMpeg4*
   name: SaveAsAviMpeg4
@@ -541,22 +541,22 @@ references:
   fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsAviMpeg4
   nameWithType: SnmFile.SaveAsAviMpeg4
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(System.String)
-  name: SaveAsMp4(string)
+  name: SaveAsMp4(string?)
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_SaveAsMp4_System_String_
   commentId: M:JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(System.String)
   name.vb: SaveAsMp4(String)
-  fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(string)
+  fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(string?)
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(String)
-  nameWithType: SnmFile.SaveAsMp4(string)
+  nameWithType: SnmFile.SaveAsMp4(string?)
   nameWithType.vb: SnmFile.SaveAsMp4(String)
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(System.String,System.Boolean)
-  name: SaveAsMp4(string, bool)
+  name: SaveAsMp4(string?, bool)
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html#JeremyAnsel_Xwa_Snm_SnmFile_SaveAsMp4_System_String_System_Boolean_
   commentId: M:JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(System.String,System.Boolean)
   name.vb: SaveAsMp4(String, Boolean)
-  fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(string, bool)
+  fullName: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(string?, bool)
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4(String, Boolean)
-  nameWithType: SnmFile.SaveAsMp4(string, bool)
+  nameWithType: SnmFile.SaveAsMp4(string?, bool)
   nameWithType.vb: SnmFile.SaveAsMp4(String, Boolean)
 - uid: JeremyAnsel.Xwa.Snm.SnmFile.SaveAsMp4*
   name: SaveAsMp4
@@ -895,13 +895,13 @@ references:
   fullName: JeremyAnsel.Xwa.Snm.SnmSubtitlesFile
   nameWithType: SnmSubtitlesFile
 - uid: JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.FromFile(System.String)
-  name: FromFile(string)
+  name: FromFile(string?)
   href: api/JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.html#JeremyAnsel_Xwa_Snm_SnmSubtitlesFile_FromFile_System_String_
   commentId: M:JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.FromFile(System.String)
   name.vb: FromFile(String)
-  fullName: JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.FromFile(string)
+  fullName: JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.FromFile(string?)
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.FromFile(String)
-  nameWithType: SnmSubtitlesFile.FromFile(string)
+  nameWithType: SnmSubtitlesFile.FromFile(string?)
   nameWithType.vb: SnmSubtitlesFile.FromFile(String)
 - uid: JeremyAnsel.Xwa.Snm.SnmSubtitlesFile.FromFile*
   name: FromFile
