@@ -35,7 +35,7 @@ namespace JeremyAnsel.Xwa.Snm
         public ushort[] Codebook { get; private set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Reviewed.")]
-        public byte[] Data { get; set; }
+        public byte[] Data { get; set; } = Array.Empty<byte>();
 
         internal int ComputeSize()
         {

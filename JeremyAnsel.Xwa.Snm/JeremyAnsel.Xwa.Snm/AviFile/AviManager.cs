@@ -26,8 +26,8 @@ namespace AviFile
     {
         [SuppressMessage("Microsoft.Reliability", "CA2006:UseSafeHandleToEncapsulateNativeResources")]
         private IntPtr aviFile = IntPtr.Zero;
-        private VideoStream videoStream = null;
-        private AudioStream audioStream = null;
+        private VideoStream? videoStream = null;
+        private AudioStream? audioStream = null;
 
         /// <summary>Open or create an AVI file</summary>
         /// <param name="fileName">Name of the AVI file</param>
@@ -45,7 +45,7 @@ namespace AviFile
 
         /// <summary>Get the first video stream - usually there is only one video stream</summary>
         /// <returns>VideoStream object for the stream</returns>
-        public VideoStream GetVideoStream()
+        public VideoStream? GetVideoStream()
         {
             if (videoStream != null)
             {
@@ -75,7 +75,7 @@ namespace AviFile
 
         /// <summary>Getthe first wave audio stream</summary>
         /// <returns>AudioStream object for the stream</returns>
-        public AudioStream GetWaveStream()
+        public AudioStream? GetWaveStream()
         {
             if (audioStream != null)
             {

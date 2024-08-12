@@ -14,14 +14,14 @@ namespace JeremyAnsel.Xwa.Snm
 {
     internal static class SnmSubtitlesHelpers
     {
-        private static DWriteFactory _dwriteFactory;
-        private static D2D1Factory _d2dFactory;
-        private static D2D1DCRenderTarget _d2dRenderTarget;
-        private static D2D1SolidColorBrush _brush;
-        private static DWriteTextFormat _textFormat10;
-        private static DWriteTextFormat _textFormat12;
-        private static DWriteTextFormat _textFormat15;
-        private static DWriteTextFormat _textFormat20;
+        private static DWriteFactory? _dwriteFactory;
+        private static D2D1Factory? _d2dFactory;
+        private static D2D1DCRenderTarget? _d2dRenderTarget;
+        private static D2D1SolidColorBrush? _brush;
+        private static DWriteTextFormat? _textFormat10;
+        private static DWriteTextFormat? _textFormat12;
+        private static DWriteTextFormat? _textFormat15;
+        private static DWriteTextFormat? _textFormat20;
 
         public static void Begin()
         {
@@ -103,7 +103,7 @@ namespace JeremyAnsel.Xwa.Snm
 
             try
             {
-                _d2dRenderTarget.BindDC(hdc, new D2D1RectL(0, 0, width, height));
+                _d2dRenderTarget!.BindDC(hdc, new D2D1RectL(0, 0, width, height));
                 _d2dRenderTarget.BeginDraw();
 
                 foreach (var subtitle in subtitles.Subtitles)
@@ -130,19 +130,19 @@ namespace JeremyAnsel.Xwa.Snm
                             a = 1.0f;
                         }
 
-                        _brush.Color = new D2D1ColorF(subtitle.ColorR / 255.0f, subtitle.ColorG / 255.0f, subtitle.ColorB / 255.0f, a);
+                        _brush!.Color = new D2D1ColorF(subtitle.ColorR / 255.0f, subtitle.ColorG / 255.0f, subtitle.ColorB / 255.0f, a);
 
                         string text = subtitle.Text;
 
                         if (text.StartsWith("!"))
                         {
-                            text = text.Substring(text.IndexOf("!", 1) + 1);
+                            text = text[(text.IndexOf("!", 1) + 1)..];
                         }
 
                         int x = subtitle.PositionX;
                         int y = subtitle.PositionY - (480 - height) / 2;
 
-                        DWriteTextFormat textFormat = subtitle.FontSize switch
+                        DWriteTextFormat? textFormat = subtitle.FontSize switch
                         {
                             10 => _textFormat10,
                             12 => _textFormat12,
@@ -155,13 +155,13 @@ namespace JeremyAnsel.Xwa.Snm
 
                         if (x < 0)
                         {
-                            textFormat.TextAlignment = DWriteTextAlignment.Center;
+                            textFormat!.TextAlignment = DWriteTextAlignment.Center;
                             layoutRect.Left = 0;
                             layoutRect.Right = width;
                         }
                         else
                         {
-                            textFormat.TextAlignment = DWriteTextAlignment.Leading;
+                            textFormat!.TextAlignment = DWriteTextAlignment.Leading;
                         }
 
                         if (y < 0)

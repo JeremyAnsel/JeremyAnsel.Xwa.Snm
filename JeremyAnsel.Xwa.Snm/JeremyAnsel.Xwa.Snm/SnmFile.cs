@@ -21,9 +21,9 @@ namespace JeremyAnsel.Xwa.Snm
             this.CurrentFrameId = -1;
         }
 
-        public string FileName { get; private set; }
+        public string? FileName { get; private set; }
 
-        public string Name
+        public string? Name
         {
             get
             {
@@ -33,28 +33,33 @@ namespace JeremyAnsel.Xwa.Snm
 
         public SnmHeader Header { get; set; }
 
-        public SnmAudioHeader AudioHeader { get; set; }
+        public SnmAudioHeader? AudioHeader { get; set; }
 
         public IList<SnmVideoHeader> VideoHeaders { get; private set; }
 
-        public string Annotation { get; set; }
+        public string Annotation { get; set; } = string.Empty;
 
         public IList<SnmFrame> Frames { get; private set; }
 
         public int CurrentFrameId { get; private set; }
 
-        public Blocky16Context CurrentFrameContext { get; private set; }
+        public Blocky16Context? CurrentFrameContext { get; private set; }
 
-        public SnmSubtitlesFile Subtitles { get; set; }
+        public SnmSubtitlesFile? Subtitles { get; set; }
 
-        public static SnmFile FromFile(string fileName)
+        public static SnmFile FromFile(string? fileName)
         {
+            if (fileName is null)
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
             var snm = new SnmFile
             {
                 FileName = fileName
             };
 
-            Stream filestream = null;
+            Stream? filestream = null;
 
             try
             {
@@ -145,8 +150,8 @@ namespace JeremyAnsel.Xwa.Snm
                                         break;
                                     }
 
-                                //default:
-                                //    throw new InvalidDataException();
+                                    //default:
+                                    //    throw new InvalidDataException();
                             }
                         }
                     }
@@ -224,10 +229,7 @@ namespace JeremyAnsel.Xwa.Snm
             }
             finally
             {
-                if (filestream != null)
-                {
-                    filestream.Dispose();
-                }
+                filestream?.Dispose();
             }
 
             string subtitlesFileName = Path.ChangeExtension(fileName, "sub");
@@ -240,15 +242,20 @@ namespace JeremyAnsel.Xwa.Snm
             return snm;
         }
 
-        public void Save(string fileName)
+        public void Save(string? fileName)
         {
-            FileStream filestream = null;
+            if (fileName is null)
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
+            FileStream? filestream = null;
 
             try
             {
                 filestream = new FileStream(fileName, FileMode.Create, FileAccess.Write);
 
-                GZipStream zip = null;
+                GZipStream? zip = null;
 
                 try
                 {
@@ -320,18 +327,12 @@ namespace JeremyAnsel.Xwa.Snm
                 }
                 finally
                 {
-                    if (zip != null)
-                    {
-                        zip.Dispose();
-                    }
+                    zip?.Dispose();
                 }
             }
             finally
             {
-                if (filestream != null)
-                {
-                    filestream.Dispose();
-                }
+                filestream?.Dispose();
             }
         }
 
@@ -388,7 +389,7 @@ namespace JeremyAnsel.Xwa.Snm
 
         [SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#")]
         [SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "1#")]
-        public bool RetrieveNextFrame(out byte[] audioData, out byte[] videoData)
+        public bool RetrieveNextFrame(out byte[]? audioData, out byte[]? videoData)
         {
             int nextId = this.CurrentFrameId + 1;
 
@@ -403,7 +404,7 @@ namespace JeremyAnsel.Xwa.Snm
 
             var frame = this.Frames[nextId];
 
-            if (frame.Audio == null)
+            if (frame.Audio == null || this.AudioHeader == null)
             {
                 audioData = null;
             }
@@ -427,8 +428,13 @@ namespace JeremyAnsel.Xwa.Snm
 
 #if NET48
         [SuppressMessage("Microsoft.Reliability", "CA2000:Supprimer les objets avant la mise hors de portée")]
-        public void SaveAsAviMotionJpeg(string fileName)
+        public void SaveAsAviMotionJpeg(string? fileName)
         {
+            if (fileName is null)
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
             var writer = new AviWriter(fileName)
             {
                 FramesPerSecond = (1000000 + this.Header.FrameDelay / 2) / this.Header.FrameDelay,
@@ -438,13 +444,13 @@ namespace JeremyAnsel.Xwa.Snm
             try
             {
                 IAviVideoStream videoStream = writer.AddMJpegWpfVideoStream(this.Header.Width, this.Header.Height, 100);
-                IAviAudioStream audioStream = writer.AddAudioStream(this.AudioHeader.NumChannels, this.AudioHeader.Frequency, 16);
+                IAviAudioStream? audioStream = this.AudioHeader is null ? null : writer.AddAudioStream(this.AudioHeader.NumChannels, this.AudioHeader.Frequency, 16);
 
                 this.BeginPlay();
 
                 try
                 {
-                    while (this.RetrieveNextFrame(out byte[] audio, out byte[] video))
+                    while (this.RetrieveNextFrame(out byte[]? audio, out byte[]? video))
                     {
                         if (video != null)
                         {
@@ -454,7 +460,7 @@ namespace JeremyAnsel.Xwa.Snm
 
                         if (audio != null)
                         {
-                            audioStream.WriteBlock(audio, 0, audio.Length);
+                            audioStream?.WriteBlock(audio, 0, audio.Length);
                         }
                     }
                 }
@@ -471,8 +477,13 @@ namespace JeremyAnsel.Xwa.Snm
 #endif
 
         [SuppressMessage("Microsoft.Reliability", "CA2000:Supprimer les objets avant la mise hors de portée")]
-        public void SaveAsAviMpeg4(string fileName)
+        public void SaveAsAviMpeg4(string? fileName)
         {
+            if (fileName is null)
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
             var writer = new AviWriter(fileName)
             {
                 FramesPerSecond = (1000000 + this.Header.FrameDelay / 2) / this.Header.FrameDelay,
@@ -482,13 +493,13 @@ namespace JeremyAnsel.Xwa.Snm
             try
             {
                 IAviVideoStream videoStream = writer.AddMpeg4VcmVideoStream(this.Header.Width, this.Header.Height, (int)writer.FramesPerSecond, 0, 100);
-                IAviAudioStream audioStream = writer.AddAudioStream(this.AudioHeader.NumChannels, this.AudioHeader.Frequency, 16);
+                IAviAudioStream? audioStream = this.AudioHeader is null ? null : writer.AddAudioStream(this.AudioHeader.NumChannels, this.AudioHeader.Frequency, 16);
 
                 this.BeginPlay();
 
                 try
                 {
-                    while (this.RetrieveNextFrame(out byte[] audio, out byte[] video))
+                    while (this.RetrieveNextFrame(out byte[]? audio, out byte[]? video))
                     {
                         if (video != null)
                         {
@@ -498,7 +509,7 @@ namespace JeremyAnsel.Xwa.Snm
 
                         if (audio != null)
                         {
-                            audioStream.WriteBlock(audio, 0, audio.Length);
+                            audioStream?.WriteBlock(audio, 0, audio.Length);
                         }
                     }
                 }
@@ -513,14 +524,24 @@ namespace JeremyAnsel.Xwa.Snm
             }
         }
 
-        public void SaveAsMp4(string fileName)
+        public void SaveAsMp4(string? fileName)
         {
+            if (fileName is null)
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
             this.SaveAsMp4(fileName, false);
         }
 
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Mp")]
-        public void SaveAsMp4(string fileName, bool addSubtitles)
+        public void SaveAsMp4(string? fileName, bool addSubtitles)
         {
+            if (fileName is null)
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
             SnmMp4Helpers.Startup();
 
             try
@@ -533,8 +554,13 @@ namespace JeremyAnsel.Xwa.Snm
             }
         }
 
-        public static SnmFile FromAviFile(string fileName)
+        public static SnmFile FromAviFile(string? fileName)
         {
+            if (fileName is null)
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
             if (!File.Exists(fileName))
             {
                 throw new FileNotFoundException();
@@ -545,8 +571,8 @@ namespace JeremyAnsel.Xwa.Snm
 
             try
             {
-                AudioStream audioStream = aviManager.GetWaveStream();
-                byte[] audioData = null;
+                AudioStream? audioStream = aviManager.GetWaveStream();
+                byte[]? audioData = null;
 
                 if (audioStream != null)
                 {
@@ -575,100 +601,103 @@ namespace JeremyAnsel.Xwa.Snm
                     }
                 }
 
-                VideoStream videoStream = aviManager.GetVideoStream();
+                VideoStream? videoStream = aviManager.GetVideoStream();
 
-                if (videoStream.BitsPerPixel != 24 && videoStream.BitsPerPixel != 32)
+                if (videoStream != null)
                 {
-                    throw new NotSupportedException();
-                }
-
-                snm.Header.FrameDelay = (int)(1000000 / videoStream.FrameRate + 0.5);
-                snm.Header.Width = (short)videoStream.Width;
-                snm.Header.Height = (short)videoStream.Height;
-                snm.Header.NumFrames = (short)videoStream.FramesCount;
-
-                for (int i = 0; i < videoStream.FramesCount; i++)
-                {
-                    snm.VideoHeaders.Add(new SnmVideoHeader
+                    if (videoStream.BitsPerPixel != 24 && videoStream.BitsPerPixel != 32)
                     {
-                        Width = snm.Header.Width,
-                        Height = snm.Header.Height
-                    });
-                }
-
-                videoStream.GetFrameOpen();
-
-                try
-                {
-                    int fps = (1000000 + snm.Header.FrameDelay / 2) / snm.Header.FrameDelay;
-                    int samplesPerFrame = snm.AudioHeader.Frequency / fps;
-
-                    if (samplesPerFrame * fps != snm.AudioHeader.Frequency)
-                    {
-                        throw new InvalidDataException();
+                        throw new NotSupportedException();
                     }
+
+                    snm.Header.FrameDelay = (int)(1000000 / videoStream.FrameRate + 0.5);
+                    snm.Header.Width = (short)videoStream.Width;
+                    snm.Header.Height = (short)videoStream.Height;
+                    snm.Header.NumFrames = (short)videoStream.FramesCount;
 
                     for (int i = 0; i < videoStream.FramesCount; i++)
                     {
-                        byte[] videoData = videoStream.GetFrameData(i);
-
-                        var frame = new SnmFrame();
-
-                        if (audioData != null)
+                        snm.VideoHeaders.Add(new SnmVideoHeader
                         {
-                            int audioPosition = i * samplesPerFrame * 4;
-                            int audioLength = Math.Min(samplesPerFrame * 4, audioData.Length - audioPosition);
+                            Width = snm.Header.Width,
+                            Height = snm.Header.Height
+                        });
+                    }
 
-                            if (audioPosition < audioData.Length && audioLength != 0)
+                    videoStream.GetFrameOpen();
+
+                    try
+                    {
+                        int fps = (1000000 + snm.Header.FrameDelay / 2) / snm.Header.FrameDelay;
+                        int samplesPerFrame = snm.AudioHeader is null ? 0 : snm.AudioHeader.Frequency / fps;
+
+                        if (snm.AudioHeader != null && samplesPerFrame * fps != snm.AudioHeader.Frequency)
+                        {
+                            throw new InvalidDataException();
+                        }
+
+                        for (int i = 0; i < videoStream.FramesCount; i++)
+                        {
+                            byte[]? videoData = videoStream.GetFrameData(i);
+
+                            var frame = new SnmFrame();
+
+                            if (audioData != null)
                             {
-                                frame.Audio = new SnmAudioFrame
+                                int audioPosition = i * samplesPerFrame * 4;
+                                int audioLength = Math.Min(samplesPerFrame * 4, audioData.Length - audioPosition);
+
+                                if (audioPosition < audioData.Length && audioLength != 0)
                                 {
-                                    NumSamples = audioLength / 4
+                                    frame.Audio = new SnmAudioFrame
+                                    {
+                                        NumSamples = audioLength / 4
+                                    };
+
+                                    byte[] buffer = new byte[audioLength];
+                                    Array.Copy(audioData, audioPosition, buffer, 0, audioLength);
+
+                                    //frame.Audio.Data = Imc.Vima.Compress(buffer, 2);
+
+                                    frame.Audio.Data = buffer;
+                                }
+                            }
+
+                            if (videoData != null)
+                            {
+                                frame.Video = new SnmVideoFrame
+                                {
+                                    Width = snm.Header.Width,
+                                    Height = snm.Header.Height,
+                                    RleOutputSize = snm.Header.Width * snm.Header.Height * 2,
+
+                                    SubcodecId = (byte)videoStream.BitsPerPixel,
+                                    Data = videoData
                                 };
 
-                                byte[] buffer = new byte[audioLength];
-                                Array.Copy(audioData, audioPosition, buffer, 0, audioLength);
+                                //byte[] buffer;
 
-                                //frame.Audio.Data = Imc.Vima.Compress(buffer, 2);
+                                //if (videoStream.BitsPerPixel == 24)
+                                //{
+                                //    buffer = SnmFile.Convert24BppTo16Bpp(videoData);
+                                //}
+                                //else
+                                //{
+                                //    buffer = SnmFile.Convert32BppTo16Bpp(videoData);
+                                //}
 
-                                frame.Audio.Data = buffer;
+                                //byte subcodecId;
+                                //frame.Video.Data = Blocky16.Compress(buffer, out subcodecId);
+                                //frame.Video.SubcodecId = subcodecId;
                             }
+
+                            snm.Frames.Add(frame);
                         }
-
-                        if (videoData != null)
-                        {
-                            frame.Video = new SnmVideoFrame
-                            {
-                                Width = snm.Header.Width,
-                                Height = snm.Header.Height,
-                                RleOutputSize = snm.Header.Width * snm.Header.Height * 2,
-
-                                SubcodecId = (byte)videoStream.BitsPerPixel,
-                                Data = videoData
-                            };
-
-                            //byte[] buffer;
-
-                            //if (videoStream.BitsPerPixel == 24)
-                            //{
-                            //    buffer = SnmFile.Convert24BppTo16Bpp(videoData);
-                            //}
-                            //else
-                            //{
-                            //    buffer = SnmFile.Convert32BppTo16Bpp(videoData);
-                            //}
-
-                            //byte subcodecId;
-                            //frame.Video.Data = Blocky16.Compress(buffer, out subcodecId);
-                            //frame.Video.SubcodecId = subcodecId;
-                        }
-
-                        snm.Frames.Add(frame);
                     }
-                }
-                finally
-                {
-                    videoStream.GetFrameClose();
+                    finally
+                    {
+                        videoStream.GetFrameClose();
+                    }
                 }
             }
             finally
@@ -706,8 +735,13 @@ namespace JeremyAnsel.Xwa.Snm
             return snm;
         }
 
-        public static SnmFile FromMFFile(string fileName)
+        public static SnmFile FromMFFile(string? fileName)
         {
+            if (fileName is null)
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
             if (!File.Exists(fileName))
             {
                 throw new FileNotFoundException();

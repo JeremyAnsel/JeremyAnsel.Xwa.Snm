@@ -29,7 +29,7 @@ namespace JeremyAnsel.Xwa.Snm
             ConvertWrite(snm, fileName, false);
         }
 
-        public static void ConvertWrite(SnmFile snm, string fileName, bool addSubtitles)
+        public static void ConvertWrite(SnmFile? snm, string? fileName, bool addSubtitles)
         {
             if (snm == null)
             {
@@ -53,7 +53,7 @@ namespace JeremyAnsel.Xwa.Snm
             long frameDuration = 10 * snm.Header.FrameDelay;
 
             InitializeSinkWriter(
-                fileName,
+                fileName!,
                 snm.Header,
                 snm.AudioHeader,
                 fps,
@@ -75,11 +75,11 @@ namespace JeremyAnsel.Xwa.Snm
                     long rtStartVideo = 0;
                     long rtStartAudio = 0;
 
-                    while (snm.RetrieveNextFrame(out byte[] audioData, out byte[] videoData))
+                    while (snm.RetrieveNextFrame(out byte[]? audioData, out byte[]? videoData))
                     {
                         if (videoData != null)
                         {
-                            if (addSubtitles)
+                            if (addSubtitles && snm.Subtitles != null)
                             {
                                 byte[] buffer = Convert16BppTo32Bpp(videoData);
                                 SnmSubtitlesHelpers.DrawSubtitle(snm.Subtitles, buffer, snm.Header.Width, snm.Header.Height, rtStartVideo);
@@ -90,7 +90,7 @@ namespace JeremyAnsel.Xwa.Snm
                             rtStartVideo += frameDuration;
                         }
 
-                        if (audioData != null)
+                        if (audioData != null && snm.AudioHeader != null)
                         {
                             int sampleSize = 2 * snm.AudioHeader.NumChannels;
                             int count = audioData.Reverse().Count(i => i == 0) / sampleSize * sampleSize;
@@ -132,7 +132,8 @@ namespace JeremyAnsel.Xwa.Snm
 
             var snm = new SnmFile();
 
-            byte[] aviAudioDataBytes;
+            byte[]? aviAudioDataBytes;
+
             try
             {
                 aviAudioDataBytes = GetAviAudioBytes(fileName);
@@ -163,7 +164,7 @@ namespace JeremyAnsel.Xwa.Snm
 
                 while (true)
                 {
-                    byte[] bytes = ReadSample(reader, audioStreamIndex, out int streamIndex, out long timestamp);
+                    byte[]? bytes = ReadSample(reader, audioStreamIndex, out int streamIndex, out long timestamp);
 
                     if (bytes == null)
                     {
@@ -180,7 +181,7 @@ namespace JeremyAnsel.Xwa.Snm
 
                 while (true)
                 {
-                    byte[] bytes = ReadSample(reader, videoStreamIndex, out int streamIndex, out long timestamp);
+                    byte[]? bytes = ReadSample(reader, videoStreamIndex, out int streamIndex, out long timestamp);
 
                     if (bytes == null)
                     {
@@ -252,14 +253,14 @@ namespace JeremyAnsel.Xwa.Snm
             return snm;
         }
 
-        private static byte[] GetAviAudioBytes(string fileName)
+        private static byte[]? GetAviAudioBytes(string fileName)
         {
             var aviManager = new AviManager(fileName);
-            byte[] bytes = null;
+            byte[]? bytes = null;
 
             try
             {
-                AudioStream audioStream = aviManager.GetWaveStream();
+                AudioStream? audioStream = aviManager.GetWaveStream();
 
                 if (audioStream != null)
                 {
@@ -289,7 +290,7 @@ namespace JeremyAnsel.Xwa.Snm
             return bytes;
         }
 
-        private static void InitializeSinkWriter(string outputUrl, SnmHeader header, SnmAudioHeader audioHeader, int fps, out IMFSinkWriter writer, out int videoStreamIndex, out int audioStreamIndex)
+        private static void InitializeSinkWriter(string outputUrl, SnmHeader header, SnmAudioHeader? audioHeader, int fps, out IMFSinkWriter writer, out int videoStreamIndex, out int audioStreamIndex)
         {
             int width = header.Width;
             int height = header.Height;
@@ -365,21 +366,24 @@ namespace JeremyAnsel.Xwa.Snm
                     Marshal.ReleaseComObject(audioMediaTypeOut);
                 }
 
-                // Set the audio input media type.
-                Marshal.ThrowExceptionForHR((int)MFExtern.MFCreateMediaType(out IMFMediaType audioMediaTypeIn));
+                if (audioHeader != null)
+                {
+                    // Set the audio input media type.
+                    Marshal.ThrowExceptionForHR((int)MFExtern.MFCreateMediaType(out IMFMediaType audioMediaTypeIn));
 
-                try
-                {
-                    Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetGUID(MFAttributesClsid.MF_MT_MAJOR_TYPE, MFMediaType.Audio));
-                    Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetGUID(MFAttributesClsid.MF_MT_SUBTYPE, MFMediaType.PCM));
-                    Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetUINT32(MFAttributesClsid.MF_MT_AUDIO_BITS_PER_SAMPLE, 16));
-                    Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetUINT32(MFAttributesClsid.MF_MT_AUDIO_SAMPLES_PER_SECOND, audioHeader.Frequency));
-                    Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetUINT32(MFAttributesClsid.MF_MT_AUDIO_NUM_CHANNELS, audioHeader.NumChannels));
-                    Marshal.ThrowExceptionForHR((int)writer.SetInputMediaType(audioStreamIndex, audioMediaTypeIn, null));
-                }
-                finally
-                {
-                    Marshal.ReleaseComObject(audioMediaTypeIn);
+                    try
+                    {
+                        Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetGUID(MFAttributesClsid.MF_MT_MAJOR_TYPE, MFMediaType.Audio));
+                        Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetGUID(MFAttributesClsid.MF_MT_SUBTYPE, MFMediaType.PCM));
+                        Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetUINT32(MFAttributesClsid.MF_MT_AUDIO_BITS_PER_SAMPLE, 16));
+                        Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetUINT32(MFAttributesClsid.MF_MT_AUDIO_SAMPLES_PER_SECOND, audioHeader.Frequency));
+                        Marshal.ThrowExceptionForHR((int)audioMediaTypeIn.SetUINT32(MFAttributesClsid.MF_MT_AUDIO_NUM_CHANNELS, audioHeader.NumChannels));
+                        Marshal.ThrowExceptionForHR((int)writer.SetInputMediaType(audioStreamIndex, audioMediaTypeIn, null));
+                    }
+                    finally
+                    {
+                        Marshal.ReleaseComObject(audioMediaTypeIn);
+                    }
                 }
             }
             catch
@@ -601,7 +605,7 @@ namespace JeremyAnsel.Xwa.Snm
             }
         }
 
-        private static byte[] ReadSample(IMFSourceReader reader, int inputStreamIndex, out int streamIndex, out long timestamp)
+        private static byte[]? ReadSample(IMFSourceReader reader, int inputStreamIndex, out int streamIndex, out long timestamp)
         {
             Marshal.ThrowExceptionForHR((int)reader.ReadSample(inputStreamIndex, 0, out streamIndex, out MF_SOURCE_READER_FLAG readFlag, out timestamp, out IMFSample sample));
 

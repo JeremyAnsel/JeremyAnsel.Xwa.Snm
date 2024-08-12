@@ -129,7 +129,7 @@ namespace AviFile
         /// <param name="position">Position of the frame</param>
         /// <returns>The frame data</returns>
         [SuppressMessage("Globalization", "CA1303:Ne pas passer de littéraux en paramètres localisés", Justification = "Reviewed.")]
-        public byte[] GetFrameData(int position)
+        public byte[]? GetFrameData(int position)
         {
             if (position > FramesCount)
             {
@@ -145,7 +145,7 @@ namespace AviFile
             }
 
             //Copy the bitmap header into a managed struct
-            Avi.BITMAPINFOHEADER bih = (Avi.BITMAPINFOHEADER)Marshal.PtrToStructure(dib, typeof(Avi.BITMAPINFOHEADER));
+            Avi.BITMAPINFOHEADER bih = (Avi.BITMAPINFOHEADER)Marshal.PtrToStructure(dib, typeof(Avi.BITMAPINFOHEADER))!;
 
             if (bih.biSizeImage < 1)
             {

@@ -508,7 +508,7 @@ namespace JeremyAnsel.Xwa.Snm
         }
 
         [SuppressMessage("Globalization", "CA1303:Ne pas passer de littéraux en paramètres localisés", Justification = "Reviewed.")]
-        public static byte[] Decompress(byte[] input, SnmVideoFrame video, Blocky16Context context)
+        public static byte[] Decompress(byte[]? input, SnmVideoFrame? video, Blocky16Context? context)
         {
             if (input == null)
             {
@@ -660,7 +660,7 @@ namespace JeremyAnsel.Xwa.Snm
         }
 
         [SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "1#")]
-        public static byte[] Compress(byte[] input, out byte subcodecId)
+        public static byte[] Compress(byte[]? input, out byte subcodecId)
         {
             if (input == null)
             {

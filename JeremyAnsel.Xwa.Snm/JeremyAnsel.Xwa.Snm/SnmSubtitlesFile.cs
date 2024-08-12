@@ -13,13 +13,18 @@ namespace JeremyAnsel.Xwa.Snm
 
         public List<SnmSubtitle> Subtitles { get; } = new List<SnmSubtitle>();
 
-        public static SnmSubtitlesFile FromFile(string fileName)
+        public static SnmSubtitlesFile FromFile(string? fileName)
         {
+            if (fileName is null)
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
             var subtitles = new SnmSubtitlesFile();
 
             using (var filestream = new StreamReader(fileName, _encoding))
             {
-                string line;
+                string? line;
                 SnmSubtitle subtitle = new();
                 int step = -1;
                 string[] parts;

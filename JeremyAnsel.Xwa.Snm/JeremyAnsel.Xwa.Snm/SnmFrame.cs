@@ -2,9 +2,9 @@
 {
     public sealed class SnmFrame
     {
-        public SnmAudioFrame Audio { get; set; }
+        public SnmAudioFrame? Audio { get; set; }
 
-        public SnmVideoFrame Video { get; set; }
+        public SnmVideoFrame? Video { get; set; }
 
         internal int ComputeSize()
         {

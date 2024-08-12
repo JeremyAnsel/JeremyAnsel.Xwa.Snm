@@ -24,7 +24,7 @@ namespace AviFile
     internal sealed class AudioStream : AviStream
     {
         /// <summary>the stream's format</summary>
-        private Avi.PCMWAVEFORMAT waveFormat = new Avi.PCMWAVEFORMAT();
+        private readonly Avi.PCMWAVEFORMAT waveFormat = new Avi.PCMWAVEFORMAT();
 
         /// <summary>Initialize an AudioStream for an existing stream</summary>
         /// <param name="aviFile">The file that contains the stream</param>
