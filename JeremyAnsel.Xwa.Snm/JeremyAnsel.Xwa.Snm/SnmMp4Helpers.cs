@@ -92,13 +92,8 @@ namespace JeremyAnsel.Xwa.Snm
 
                         if (audioData != null && snm.AudioHeader != null)
                         {
-                            int sampleSize = 2 * snm.AudioHeader.NumChannels;
-                            int count = audioData.Reverse().Count(i => i == 0) / sampleSize * sampleSize;
-                            byte[] buffer = audioData.Take(audioData.Length - count).ToArray();
-                            long bufferDuration = (long)(10 * 1000 * 1000) * buffer.Length / (snm.AudioHeader.Frequency * 2 * snm.AudioHeader.NumChannels);
-
                             long duration = (long)(10 * 1000 * 1000) * audioData.Length / (snm.AudioHeader.Frequency * 2 * snm.AudioHeader.NumChannels);
-                            WriteAudioFrame(bufferDuration, writer, audioStream, rtStartAudio, buffer);
+                            WriteAudioFrame(duration, writer, audioStream, rtStartAudio, audioData);
 
                             rtStartAudio += duration;
                         }
