@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
 
@@ -72,7 +72,7 @@
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -205,7 +205,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static byte[] Compress(byte[]? input, out byte subcodecId)</code></pre>
+    <pre><code class="lang-csharp hljs">[SuppressMessage(&quot;Microsoft.Design&quot;, &quot;CA1021:AvoidOutParameters&quot;, MessageId = &quot;1#&quot;)]
+public static byte[] Compress(byte[]? input, out byte subcodecId)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -257,7 +258,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static byte[] Decompress(byte[]? input, SnmVideoFrame? video, Blocky16Context? context)</code></pre>
+    <pre><code class="lang-csharp hljs">[SuppressMessage(&quot;Globalization&quot;, &quot;CA1303:Ne pas passer de litt&#233;raux en param&#232;tres localis&#233;s&quot;, Justification = &quot;Reviewed.&quot;)]
+public static byte[] Decompress(byte[]? input, SnmVideoFrame? video, Blocky16Context? context)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
