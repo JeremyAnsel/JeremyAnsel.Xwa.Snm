@@ -66,7 +66,12 @@ namespace JeremyAnsel.Xwa.Snm
                 filestream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
 
                 byte[] magic = new byte[2];
-                filestream.Read(magic, 0, 2);
+                if (filestream.Read(magic, 0, magic.Length) != magic.Length)
+                {
+                    throw new InvalidDataException();
+
+                }
+
                 filestream.Seek(0, SeekOrigin.Begin);
 
                 if (magic[0] == 0x1F && magic[1] == 0x8B)

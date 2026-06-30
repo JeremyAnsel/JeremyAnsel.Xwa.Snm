@@ -29,7 +29,7 @@ namespace JeremyAnsel.Xwa.Snm
 
             _d2dFactory = D2D1Factory.Create(D2D1FactoryType.SingleThreaded);
 
-            _d2dRenderTarget = _d2dFactory.CreateDCRenderTarget(new D2D1RenderTargetProperties(
+            _d2dRenderTarget = _d2dFactory!.CreateDCRenderTarget(new D2D1RenderTargetProperties(
                 D2D1RenderTargetType.Default,
                 new D2D1PixelFormat(DxgiFormat.B8G8R8A8UNorm, D2D1AlphaMode.Premultiplied),
                 96.0f,
@@ -37,9 +37,9 @@ namespace JeremyAnsel.Xwa.Snm
                 D2D1RenderTargetUsages.None,
                 D2D1FeatureLevel.FeatureLevel100));
 
-            _brush = _d2dRenderTarget.CreateSolidColorBrush(new D2D1ColorF(0U));
+            _brush = _d2dRenderTarget!.CreateSolidColorBrush(new D2D1ColorF(0U));
 
-            _textFormat10 = _dwriteFactory.CreateTextFormat(
+            _textFormat10 = _dwriteFactory!.CreateTextFormat(
                 "Verdana",
                 null,
                 DWriteFontWeight.Bold,
