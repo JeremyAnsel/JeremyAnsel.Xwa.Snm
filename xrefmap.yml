@@ -22,15 +22,6 @@ references:
   fullName.vb: AviFile.AviFileException.New()
   nameWithType: AviFileException.AviFileException()
   nameWithType.vb: AviFileException.New()
-- uid: AviFile.AviFileException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-  name: AviFileException(SerializationInfo, StreamingContext)
-  href: api/AviFile.AviFileException.html#AviFile_AviFileException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
-  commentId: M:AviFile.AviFileException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-  name.vb: New(SerializationInfo, StreamingContext)
-  fullName: AviFile.AviFileException.AviFileException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
-  fullName.vb: AviFile.AviFileException.New(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
-  nameWithType: AviFileException.AviFileException(SerializationInfo, StreamingContext)
-  nameWithType.vb: AviFileException.New(SerializationInfo, StreamingContext)
 - uid: AviFile.AviFileException.#ctor(System.String)
   name: AviFileException(string)
   href: api/AviFile.AviFileException.html#AviFile_AviFileException__ctor_System_String_
