@@ -96,6 +96,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "JeremyAnsel.Xwa.Snm.SnmBufferHelpers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/JeremyAnsel.Xwa.Snm.SnmFile.yml",
       "output": {
         ".html": {

@@ -29,6 +29,11 @@
     "title": "Class SnmAudioHeader",
     "summary": "Class SnmAudioHeader Inheritance object SnmAudioHeader Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Namespace: JeremyAnsel.Xwa.Snm Assembly: JeremyAnsel.Xwa.Snm.dll Syntax public sealed class SnmAudioHeader Properties | Edit this page View Source Frequency Declaration public int Frequency { get; set; } Property Value Type Description int | Edit this page View Source NumChannels Declaration public int NumChannels { get; set; } Property Value Type Description int"
   },
+  "api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html": {
+    "href": "api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html",
+    "title": "Class SnmBufferHelpers",
+    "summary": "Class SnmBufferHelpers Inheritance object SnmBufferHelpers Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: JeremyAnsel.Xwa.Snm Assembly: JeremyAnsel.Xwa.Snm.dll Syntax public static class SnmBufferHelpers Methods | Edit this page View Source Convert16BppTo32Bpp(byte[]) Declaration public static byte[] Convert16BppTo32Bpp(byte[] bytes) Parameters Type Name Description byte[] bytes Returns Type Description byte[] | Edit this page View Source Convert24BppTo16Bpp(byte[]) Declaration public static byte[] Convert24BppTo16Bpp(byte[] bytes) Parameters Type Name Description byte[] bytes Returns Type Description byte[] | Edit this page View Source Convert32BppTo16Bpp(byte[]) Declaration public static byte[] Convert32BppTo16Bpp(byte[] bytes) Parameters Type Name Description byte[] bytes Returns Type Description byte[] | Edit this page View Source ConvertAudio44100To22050(byte[]) Declaration public static byte[] ConvertAudio44100To22050(byte[] audioData) Parameters Type Name Description byte[] audioData Returns Type Description byte[]"
+  },
   "api/JeremyAnsel.Xwa.Snm.SnmFile.html": {
     "href": "api/JeremyAnsel.Xwa.Snm.SnmFile.html",
     "title": "Class SnmFile",
@@ -67,7 +72,7 @@
   "api/JeremyAnsel.Xwa.Snm.html": {
     "href": "api/JeremyAnsel.Xwa.Snm.html",
     "title": "Namespace JeremyAnsel.Xwa.Snm",
-    "summary": "Namespace JeremyAnsel.Xwa.Snm Classes Blocky16 Blocky16Context SnmAudioFrame SnmAudioHeader SnmFile SnmFrame SnmHeader SnmSubtitle SnmSubtitlesFile SnmVideoFrame SnmVideoHeader"
+    "summary": "Namespace JeremyAnsel.Xwa.Snm Classes Blocky16 Blocky16Context SnmAudioFrame SnmAudioHeader SnmBufferHelpers SnmFile SnmFrame SnmHeader SnmSubtitle SnmSubtitlesFile SnmVideoFrame SnmVideoHeader"
   },
   "api/index.html": {
     "href": "api/index.html",
