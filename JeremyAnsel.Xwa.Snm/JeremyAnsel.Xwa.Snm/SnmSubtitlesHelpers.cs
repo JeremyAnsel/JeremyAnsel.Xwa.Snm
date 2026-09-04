@@ -1,5 +1,6 @@
 ﻿using JeremyAnsel.DirectX.D2D1;
 using JeremyAnsel.DirectX.DWrite;
+using JeremyAnsel.DirectX.DXCommon;
 using JeremyAnsel.DirectX.Dxgi;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -73,14 +74,14 @@ namespace JeremyAnsel.Xwa.Snm
 
         public static void End()
         {
-            DWriteUtils.DisposeAndNull(ref _textFormat10);
-            DWriteUtils.DisposeAndNull(ref _textFormat12);
-            DWriteUtils.DisposeAndNull(ref _textFormat15);
-            DWriteUtils.DisposeAndNull(ref _textFormat20);
-            D2D1Utils.DisposeAndNull(ref _brush);
-            D2D1Utils.DisposeAndNull(ref _d2dRenderTarget);
-            D2D1Utils.DisposeAndNull(ref _d2dFactory);
-            DWriteUtils.DisposeAndNull(ref _dwriteFactory);
+            DXUtils.DisposeAndNull(ref _textFormat10);
+            DXUtils.DisposeAndNull(ref _textFormat12);
+            DXUtils.DisposeAndNull(ref _textFormat15);
+            DXUtils.DisposeAndNull(ref _textFormat20);
+            DXUtils.DisposeAndNull(ref _brush);
+            DXUtils.DisposeAndNull(ref _d2dRenderTarget);
+            DXUtils.DisposeAndNull(ref _d2dFactory);
+            DXUtils.DisposeAndNull(ref _dwriteFactory);
         }
 
         public static void DrawSubtitle(SnmSubtitlesFile subtitles, byte[] videoData, int width, int height, long frame)
