@@ -1,14 +1,9 @@
 ﻿using JeremyAnsel.DirectX.D2D1;
 using JeremyAnsel.DirectX.DWrite;
 using JeremyAnsel.DirectX.Dxgi;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JeremyAnsel.Xwa.Snm
 {

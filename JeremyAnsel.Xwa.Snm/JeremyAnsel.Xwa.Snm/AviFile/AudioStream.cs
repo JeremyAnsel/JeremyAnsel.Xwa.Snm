@@ -15,7 +15,6 @@
 * Please do not expect Release Quality.
 * */
 
-using System;
 using System.Globalization;
 using System.Runtime.InteropServices;
 

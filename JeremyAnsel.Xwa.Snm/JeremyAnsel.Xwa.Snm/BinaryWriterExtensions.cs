@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace JeremyAnsel.Xwa.Snm
+﻿namespace JeremyAnsel.Xwa.Snm
 {
     internal static class BinaryWriterExtensions
     {
