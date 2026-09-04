@@ -17,8 +17,8 @@ namespace AviFile
         {
         }
 
-        protected AviFileException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
+        //protected AviFileException(SerializationInfo info, StreamingContext context) : base(info, context)
+        //{
+        //}
     }
 }

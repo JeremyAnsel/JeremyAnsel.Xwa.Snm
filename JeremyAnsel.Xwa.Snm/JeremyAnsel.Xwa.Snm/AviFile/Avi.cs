@@ -69,6 +69,36 @@ namespace AviFile
             public int biYPelsPerMeter;
             public int biClrUsed;
             public int biClrImportant;
+
+            public static BITMAPINFOHEADER FromPtr(nint ptr)
+            {
+                BITMAPINFOHEADER header;
+
+                header.biSize = Marshal.ReadInt32(ptr);
+                ptr += 4;
+                header.biWidth = Marshal.ReadInt32(ptr);
+                ptr += 4;
+                header.biHeight = Marshal.ReadInt32(ptr);
+                ptr += 4;
+                header.biPlanes = Marshal.ReadInt16(ptr);
+                ptr += 2;
+                header.biBitCount = Marshal.ReadInt16(ptr);
+                ptr += 2;
+                header.biCompression = Marshal.ReadInt32(ptr);
+                ptr += 4;
+                header.biSizeImage = Marshal.ReadInt32(ptr);
+                ptr += 4;
+                header.biXPelsPerMeter = Marshal.ReadInt32(ptr);
+                ptr += 4;
+                header.biYPelsPerMeter = Marshal.ReadInt32(ptr);
+                ptr += 4;
+                header.biClrUsed = Marshal.ReadInt32(ptr);
+                ptr += 4;
+                header.biClrImportant = Marshal.ReadInt32(ptr);
+                ptr += 4;
+
+                return header;
+            }
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]

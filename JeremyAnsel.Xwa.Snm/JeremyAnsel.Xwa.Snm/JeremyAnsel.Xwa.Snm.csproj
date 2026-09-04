@@ -18,9 +18,15 @@
     <Company>Jérémy Ansel</Company>
     <Copyright>Copyright © 2017-2022 Jérémy Ansel</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>Xwa Snm Avi Mp4 Movie Video Audio Converter Encoder Decoder</PackageTags>
+    <PackageTags>Xwa Snm Avi Mp4 Movie Cutscene Image Video Audio Converter Encoder Decoder</PackageTags>
     <PackageProjectUrl>https://github.com/JeremyAnsel/JeremyAnsel.Xwa.Snm</PackageProjectUrl>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <IsAotCompatible Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net8.0'))">true</IsAotCompatible>
+    <VerifyReferenceAotCompatibility>true</VerifyReferenceAotCompatibility>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <NoWarn>CA1416;CA2022;CS1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

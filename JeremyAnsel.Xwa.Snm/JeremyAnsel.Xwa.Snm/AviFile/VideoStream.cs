@@ -30,13 +30,13 @@ namespace AviFile
 
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         public int FrameSize { get; }
-        
+
         public double FrameRate { get; }
-        
+
         public int Width { get; }
-        
+
         public int Height { get; }
-        
+
         public short BitsPerPixel { get; }
 
         /// <summary>count of frames in the stream</summary>
@@ -144,7 +144,7 @@ namespace AviFile
             }
 
             //Copy the bitmap header into a managed struct
-            Avi.BITMAPINFOHEADER bih = (Avi.BITMAPINFOHEADER)Marshal.PtrToStructure(dib, typeof(Avi.BITMAPINFOHEADER))!;
+            Avi.BITMAPINFOHEADER bih = Avi.BITMAPINFOHEADER.FromPtr(dib);
 
             if (bih.biSizeImage < 1)
             {
