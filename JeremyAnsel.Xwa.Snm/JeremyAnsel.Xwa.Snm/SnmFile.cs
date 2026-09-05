@@ -394,7 +394,7 @@ namespace JeremyAnsel.Xwa.Snm
         {
             int nextId = this.CurrentFrameId + 1;
 
-            if (nextId < 0 || nextId >= this.Frames.Count)
+            if (nextId < 0 || nextId >= this.Frames.Count || this.CurrentFrameContext is null)
             {
                 audioData = null;
                 videoData = null;
