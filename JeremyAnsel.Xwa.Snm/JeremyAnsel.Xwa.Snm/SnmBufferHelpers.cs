@@ -2,10 +2,20 @@
 {
     public static class SnmBufferHelpers
     {
+        public static int ConvertAudio44100To22050RequiredSize(int length)
+        {
+            return length / 8 * 4;
+        }
+
         public static byte[] ConvertAudio44100To22050(byte[] audioData)
         {
-            byte[] buffer = new byte[audioData.Length / 8 * 4];
+            var buffer = new byte[audioData.Length / 8 * 4];
+            ConvertAudio44100To22050(audioData, buffer);
+            return buffer;
+        }
 
+        public static void ConvertAudio44100To22050(byte[] audioData, byte[] buffer)
+        {
             for (int i = 0, j = 0; i <= audioData.Length - 8; i += 8, j += 4)
             {
                 short val00 = BitConverter.ToInt16(audioData, i);
@@ -21,14 +31,24 @@
                 buffer[j + 2] = (byte)(val1 & 0xff);
                 buffer[j + 3] = (byte)((val1 >> 8) & 0xff);
             }
+        }
 
-            return buffer;
+        public static int Convert16BppTo32BppRequiredSize(int length)
+        {
+            return length * 2;
         }
 
         public static byte[] Convert16BppTo32Bpp(byte[] bytes)
         {
             int length = bytes.Length * 2;
             var buffer = new byte[length];
+            Convert16BppTo32Bpp(bytes, buffer);
+            return buffer;
+        }
+
+        public static void Convert16BppTo32Bpp(byte[] bytes, byte[] buffer)
+        {
+            int length = bytes.Length * 2;
 
             for (int i = 0, j = 0; i < length; i += 4, j += 2)
             {
@@ -47,14 +67,24 @@
                 buffer[i + 2] = r;
                 buffer[i + 3] = 0xff;
             }
+        }
 
-            return buffer;
+        public static int Convert24BppTo16BppRequiredSize(int length)
+        {
+            return length / 3 * 2;
         }
 
         public static byte[] Convert24BppTo16Bpp(byte[] bytes)
         {
             int length = bytes.Length / 3;
             var buffer = new byte[length * 2];
+            Convert24BppTo16Bpp(bytes, buffer);
+            return buffer;
+        }
+
+        public static void Convert24BppTo16Bpp(byte[] bytes, byte[] buffer)
+        {
+            int length = bytes.Length / 3;
 
             for (int i = 0; i < length; i++)
             {
@@ -70,14 +100,24 @@
                 buffer[i * 2] = (byte)(c & 0xff);
                 buffer[i * 2 + 1] = (byte)((c >> 8) & 0xff);
             }
+        }
 
-            return buffer;
+        public static int Convert32BppTo16BppRequiredSize(int length)
+        {
+            return length / 4 * 2;
         }
 
         public static byte[] Convert32BppTo16Bpp(byte[] bytes)
         {
             int length = bytes.Length / 4;
             var buffer = new byte[length * 2];
+            Convert32BppTo16Bpp(bytes, buffer);
+            return buffer;
+        }
+
+        public static void Convert32BppTo16Bpp(byte[] bytes, byte[] buffer)
+        {
+            int length = bytes.Length / 4;
 
             for (int i = 0; i < length; i++)
             {
@@ -93,8 +133,6 @@
                 buffer[i * 2] = (byte)(c & 0xff);
                 buffer[i * 2 + 1] = (byte)((c >> 8) & 0xff);
             }
-
-            return buffer;
         }
     }
 }
