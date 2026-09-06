@@ -295,6 +295,15 @@ references:
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32Bpp(Byte())
   nameWithType: SnmBufferHelpers.Convert16BppTo32Bpp(byte[])
   nameWithType.vb: SnmBufferHelpers.Convert16BppTo32Bpp(Byte())
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32Bpp(System.Byte[],System.Byte[])
+  name: Convert16BppTo32Bpp(byte[], byte[])
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert16BppTo32Bpp_System_Byte___System_Byte___
+  commentId: M:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32Bpp(System.Byte[],System.Byte[])
+  name.vb: Convert16BppTo32Bpp(Byte(), Byte())
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32Bpp(byte[], byte[])
+  fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32Bpp(Byte(), Byte())
+  nameWithType: SnmBufferHelpers.Convert16BppTo32Bpp(byte[], byte[])
+  nameWithType.vb: SnmBufferHelpers.Convert16BppTo32Bpp(Byte(), Byte())
 - uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32Bpp*
   name: Convert16BppTo32Bpp
   href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert16BppTo32Bpp_
@@ -302,6 +311,22 @@ references:
   isSpec: "True"
   fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32Bpp
   nameWithType: SnmBufferHelpers.Convert16BppTo32Bpp
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32BppRequiredSize(System.Int32)
+  name: Convert16BppTo32BppRequiredSize(int)
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert16BppTo32BppRequiredSize_System_Int32_
+  commentId: M:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32BppRequiredSize(System.Int32)
+  name.vb: Convert16BppTo32BppRequiredSize(Integer)
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32BppRequiredSize(int)
+  fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32BppRequiredSize(Integer)
+  nameWithType: SnmBufferHelpers.Convert16BppTo32BppRequiredSize(int)
+  nameWithType.vb: SnmBufferHelpers.Convert16BppTo32BppRequiredSize(Integer)
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32BppRequiredSize*
+  name: Convert16BppTo32BppRequiredSize
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert16BppTo32BppRequiredSize_
+  commentId: Overload:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32BppRequiredSize
+  isSpec: "True"
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert16BppTo32BppRequiredSize
+  nameWithType: SnmBufferHelpers.Convert16BppTo32BppRequiredSize
 - uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16Bpp(System.Byte[])
   name: Convert24BppTo16Bpp(byte[])
   href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert24BppTo16Bpp_System_Byte___
@@ -311,6 +336,15 @@ references:
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16Bpp(Byte())
   nameWithType: SnmBufferHelpers.Convert24BppTo16Bpp(byte[])
   nameWithType.vb: SnmBufferHelpers.Convert24BppTo16Bpp(Byte())
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16Bpp(System.Byte[],System.Byte[])
+  name: Convert24BppTo16Bpp(byte[], byte[])
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert24BppTo16Bpp_System_Byte___System_Byte___
+  commentId: M:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16Bpp(System.Byte[],System.Byte[])
+  name.vb: Convert24BppTo16Bpp(Byte(), Byte())
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16Bpp(byte[], byte[])
+  fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16Bpp(Byte(), Byte())
+  nameWithType: SnmBufferHelpers.Convert24BppTo16Bpp(byte[], byte[])
+  nameWithType.vb: SnmBufferHelpers.Convert24BppTo16Bpp(Byte(), Byte())
 - uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16Bpp*
   name: Convert24BppTo16Bpp
   href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert24BppTo16Bpp_
@@ -318,6 +352,22 @@ references:
   isSpec: "True"
   fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16Bpp
   nameWithType: SnmBufferHelpers.Convert24BppTo16Bpp
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16BppRequiredSize(System.Int32)
+  name: Convert24BppTo16BppRequiredSize(int)
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert24BppTo16BppRequiredSize_System_Int32_
+  commentId: M:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16BppRequiredSize(System.Int32)
+  name.vb: Convert24BppTo16BppRequiredSize(Integer)
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16BppRequiredSize(int)
+  fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16BppRequiredSize(Integer)
+  nameWithType: SnmBufferHelpers.Convert24BppTo16BppRequiredSize(int)
+  nameWithType.vb: SnmBufferHelpers.Convert24BppTo16BppRequiredSize(Integer)
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16BppRequiredSize*
+  name: Convert24BppTo16BppRequiredSize
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert24BppTo16BppRequiredSize_
+  commentId: Overload:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16BppRequiredSize
+  isSpec: "True"
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert24BppTo16BppRequiredSize
+  nameWithType: SnmBufferHelpers.Convert24BppTo16BppRequiredSize
 - uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16Bpp(System.Byte[])
   name: Convert32BppTo16Bpp(byte[])
   href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert32BppTo16Bpp_System_Byte___
@@ -327,6 +377,15 @@ references:
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16Bpp(Byte())
   nameWithType: SnmBufferHelpers.Convert32BppTo16Bpp(byte[])
   nameWithType.vb: SnmBufferHelpers.Convert32BppTo16Bpp(Byte())
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16Bpp(System.Byte[],System.Byte[])
+  name: Convert32BppTo16Bpp(byte[], byte[])
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert32BppTo16Bpp_System_Byte___System_Byte___
+  commentId: M:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16Bpp(System.Byte[],System.Byte[])
+  name.vb: Convert32BppTo16Bpp(Byte(), Byte())
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16Bpp(byte[], byte[])
+  fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16Bpp(Byte(), Byte())
+  nameWithType: SnmBufferHelpers.Convert32BppTo16Bpp(byte[], byte[])
+  nameWithType.vb: SnmBufferHelpers.Convert32BppTo16Bpp(Byte(), Byte())
 - uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16Bpp*
   name: Convert32BppTo16Bpp
   href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert32BppTo16Bpp_
@@ -334,6 +393,22 @@ references:
   isSpec: "True"
   fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16Bpp
   nameWithType: SnmBufferHelpers.Convert32BppTo16Bpp
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16BppRequiredSize(System.Int32)
+  name: Convert32BppTo16BppRequiredSize(int)
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert32BppTo16BppRequiredSize_System_Int32_
+  commentId: M:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16BppRequiredSize(System.Int32)
+  name.vb: Convert32BppTo16BppRequiredSize(Integer)
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16BppRequiredSize(int)
+  fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16BppRequiredSize(Integer)
+  nameWithType: SnmBufferHelpers.Convert32BppTo16BppRequiredSize(int)
+  nameWithType.vb: SnmBufferHelpers.Convert32BppTo16BppRequiredSize(Integer)
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16BppRequiredSize*
+  name: Convert32BppTo16BppRequiredSize
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_Convert32BppTo16BppRequiredSize_
+  commentId: Overload:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16BppRequiredSize
+  isSpec: "True"
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.Convert32BppTo16BppRequiredSize
+  nameWithType: SnmBufferHelpers.Convert32BppTo16BppRequiredSize
 - uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050(System.Byte[])
   name: ConvertAudio44100To22050(byte[])
   href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_ConvertAudio44100To22050_System_Byte___
@@ -343,6 +418,15 @@ references:
   fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050(Byte())
   nameWithType: SnmBufferHelpers.ConvertAudio44100To22050(byte[])
   nameWithType.vb: SnmBufferHelpers.ConvertAudio44100To22050(Byte())
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050(System.Byte[],System.Byte[])
+  name: ConvertAudio44100To22050(byte[], byte[])
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_ConvertAudio44100To22050_System_Byte___System_Byte___
+  commentId: M:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050(System.Byte[],System.Byte[])
+  name.vb: ConvertAudio44100To22050(Byte(), Byte())
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050(byte[], byte[])
+  fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050(Byte(), Byte())
+  nameWithType: SnmBufferHelpers.ConvertAudio44100To22050(byte[], byte[])
+  nameWithType.vb: SnmBufferHelpers.ConvertAudio44100To22050(Byte(), Byte())
 - uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050*
   name: ConvertAudio44100To22050
   href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_ConvertAudio44100To22050_
@@ -350,6 +434,22 @@ references:
   isSpec: "True"
   fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050
   nameWithType: SnmBufferHelpers.ConvertAudio44100To22050
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050RequiredSize(System.Int32)
+  name: ConvertAudio44100To22050RequiredSize(int)
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_ConvertAudio44100To22050RequiredSize_System_Int32_
+  commentId: M:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050RequiredSize(System.Int32)
+  name.vb: ConvertAudio44100To22050RequiredSize(Integer)
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050RequiredSize(int)
+  fullName.vb: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050RequiredSize(Integer)
+  nameWithType: SnmBufferHelpers.ConvertAudio44100To22050RequiredSize(int)
+  nameWithType.vb: SnmBufferHelpers.ConvertAudio44100To22050RequiredSize(Integer)
+- uid: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050RequiredSize*
+  name: ConvertAudio44100To22050RequiredSize
+  href: api/JeremyAnsel.Xwa.Snm.SnmBufferHelpers.html#JeremyAnsel_Xwa_Snm_SnmBufferHelpers_ConvertAudio44100To22050RequiredSize_
+  commentId: Overload:JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050RequiredSize
+  isSpec: "True"
+  fullName: JeremyAnsel.Xwa.Snm.SnmBufferHelpers.ConvertAudio44100To22050RequiredSize
+  nameWithType: SnmBufferHelpers.ConvertAudio44100To22050RequiredSize
 - uid: JeremyAnsel.Xwa.Snm.SnmFile
   name: SnmFile
   href: api/JeremyAnsel.Xwa.Snm.SnmFile.html
